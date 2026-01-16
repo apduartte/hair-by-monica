@@ -1,0 +1,22 @@
+# Arquivos e pastas do Visual Studio
+.vs/
+*.db
+*.wsuo
+*.vsidx
+*.backup.json
+*.sqlite
+
+# Arquivos temporários
+*.log
+*.tmp
+*.bak
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Node.js (se usar futuramente)
+node_modules/
+
+# Glide export (se gerar arquivos)
+glide-export/
