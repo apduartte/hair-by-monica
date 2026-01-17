@@ -10,21 +10,12 @@ A disponibilidade e os agendamentos são controlados em **Google Sheets**, expos
 * **Admin** (painel de gestão da agenda)
 
 ---
-
 ## 🌐 Demo
 
 ```txt
 https://apduartte.com.br/hair-by-monica/
 
 ---
-
-## 🌐 Demo (opcional)
-
-```txt
-https://apduartte.com.br/hair-by-monica/
-
----
-
 ## 🧠 Arquitetura
 
 ```mermaid
