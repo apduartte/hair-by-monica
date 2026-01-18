@@ -1,594 +1,456 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hair by Monica — Só de Segunda</title>
-  <meta name="description" content="Agende seu horário com a Monica — atendimento só de segunda. Escolha o serviço, selecione o horário disponível e confirme no WhatsApp." />
-
-  <!-- Fonts (Google Fonts) -->
+  <meta name="description" content="Agendamento simples e elegante. Escolha o serviço, selecione um horário disponível e confirme pelo WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* =========
+       Design System
+       ========= */
     :root{
-      --primary:#C96B87;      /* Rosa queimado */
-      --secondary:#F4D6DF;    /* Rosé claro */
-      --bg:#FFF7FA;           /* Off-white */
-      --text:#2B2B2B;         /* Grafite */
-      --cta:#FF6B6B;          /* Coral */
-      --gold:#C8A25A;         /* Dourado suave */
-
-      --ok:#2FBF71;
-      --warn:#F5A623;
-      --muted:#9B9B9B;
-
-      --card:#ffffff;
-      --border: rgba(201,107,135,.25);
-      --shadow: 0 10px 30px rgba(43,43,43,.08);
-      --radius: 18px;
+      --bg:#f7f6f4;
+      --surface:#ffffff;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --brand:#8c6a55;      /* nude premium */
+      --brand-strong:#6f523f;
+      --ok:#2e7d32;
+      --warn:#f9a825;
+      --danger:#c62828;
+      --border:#e6e2dc;
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+      --radius:14px;
+      --radius-sm:10px;
+      --space:20px;
+      --space-lg:28px;
+      --space-xl:40px;
     }
 
-    *{ box-sizing: border-box; }
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(244,214,223,.7), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(200,162,90,.18), transparent 55%),
-                  var(--bg);
-      color: var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
     }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:var(--brand-strong)}
+    img{max-width:100%;display:block}
 
+    /* Layout */
     .container{
-      width: min(980px, 92vw);
-      margin: 0 auto;
-      padding: 28px 0 60px;
+      width:100%;
+      max-width:1000px;
+      margin:0 auto;
+      padding:0 var(--space);
     }
-
     header{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 16px;
-      margin-bottom: 18px;
+      position:sticky; top:0; z-index:10;
+      background:rgba(247,246,244,.85);
+      backdrop-filter:saturate(180%) blur(8px);
+      border-bottom:1px solid var(--border);
     }
-
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      height:64px;
+    }
     .brand{
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(200,162,90,.25);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 18px 18px;
-      backdrop-filter: blur(10px);
-      flex: 1;
-      min-width: 280px;
+      display:flex; align-items:center; gap:12px;
+      font-weight:700; letter-spacing:.2px;
     }
-
-    .brand h1{
-      font-family: "Playfair Display", serif;
-      margin: 0 0 6px;
-      letter-spacing: .2px;
-      font-size: 28px;
-      line-height: 1.15;
+    .brand-mark{
+      width:36px; height:36px; border-radius:50%;
+      background:linear-gradient(135deg,var(--brand),var(--brand-strong));
+      box-shadow:var(--shadow);
     }
-    .brand p{
-      margin: 0;
-      opacity: .9;
-      line-height: 1.5;
-    }
-
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      margin-top: 12px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px dashed rgba(200,162,90,.55);
-      color: var(--text);
-      background: rgba(255,255,255,.6);
-      font-size: 13px;
-    }
-    .dot{
-      width: 10px; height: 10px; border-radius: 999px;
-      background: var(--gold);
-      box-shadow: 0 0 0 3px rgba(200,162,90,.18);
-    }
-
-    .cta-top{
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-      min-width: 220px;
-    }
-
-    .pill{
-      border-radius: 999px;
-      padding: 10px 12px;
-      border: 1px solid rgba(201,107,135,.2);
-      background: rgba(255,255,255,.7);
-      box-shadow: var(--shadow);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
-      header{ flex-direction: column; }
-      .cta-top{ width: 100%; min-width: unset; }
-    }
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-
-    h2{
-      margin: 0 0 12px;
-      font-family: "Montserrat", sans-serif;
-      font-size: 16px;
-      letter-spacing: .2px;
-    }
-
-    .services{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 12px;
-    }
-    @media (max-width: 520px){
-      .services{ grid-template-columns: 1fr; }
-    }
-
-    .service{
-      border: 1px solid rgba(201,107,135,.22);
-      border-radius: 16px;
-      padding: 14px 14px;
-      background: linear-gradient(180deg, rgba(244,214,223,.35), rgba(255,255,255,.9));
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .service:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(43,43,43,.10);
-    }
-    .service .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-    .service .name{
-      font-family:"Montserrat", sans-serif;
-      color: var(--primary);
-      margin:0;
-      font-size: 15px;
-    }
-    .service .desc{
-      margin: 0 0 12px;
-      opacity: .88;
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    button{
-      appearance:none;
-      border: 0;
-      cursor:pointer;
-      font-family:"Montserrat", sans-serif;
+    .nav-actions{
+      display:flex; gap:10px;
     }
     .btn{
-      width: 100%;
-      border-radius: 14px;
-      padding: 11px 12px;
-      background: var(--cta);
-      color: #fff;
-      font-size: 14px;
-      letter-spacing: .2px;
-      box-shadow: 0 10px 22px rgba(255,107,107,.25);
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:10px 16px; border-radius:999px;
+      border:1px solid var(--border); background:var(--surface);
+      color:var(--text); font-weight:600; transition:.2s ease;
     }
-    .btn.secondary{
-      background: #fff;
-      color: var(--text);
-      border: 1px solid rgba(201,107,135,.25);
-      box-shadow: none;
+    .btn:hover{box-shadow:var(--shadow)}
+    .btn-primary{
+      background:var(--brand); color:#fff; border-color:transparent;
+    }
+    .btn-primary:hover{background:var(--brand-strong)}
+    .btn-icon{padding:10px}
+
+    main{padding:var(--space-lg) 0 var(--space-xl)}
+
+    /* Hero */
+    .hero{
+      display:grid; gap:var(--space-lg);
+      grid-template-columns:1.2fr .8fr;
+    }
+    .card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:var(--space-lg);
+    }
+    .card h2{margin:0 0 8px}
+    .sub{color:var(--muted); margin:0}
+    .meta{
+      display:grid; gap:10px; margin-top:16px;
+      grid-template-columns:repeat(3,1fr);
+    }
+    .meta .pill{
+      border:1px solid var(--border); border-radius:999px;
+      padding:8px 12px; color:var(--muted); font-weight:600; text-align:center;
+      background:#fff;
     }
 
-    .hint{
-      font-size: 12px;
-      opacity: .85;
-      line-height: 1.4;
-    }
+    /* Services */
+    .section{margin-top:var(--space-xl)}
+    .section h3{margin:0 0 6px}
+    .section p{color:var(--muted); margin:0 0 var(--space)}
 
-    .legend{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
+    .grid{
+      display:grid; gap:var(--space);
+      grid-template-columns:repeat(2,1fr);
     }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 8px 10px;
-      border: 1px solid rgba(43,43,43,.08);
-      background: rgba(255,255,255,.8);
-      font-size: 12px;
+    .service{
+      display:flex; flex-direction:column; gap:12px;
+      border:1px solid var(--border); border-radius:var(--radius-sm);
+      padding:var(--space); background:#fff;
     }
-    .badge .b{
-      width: 10px; height: 10px; border-radius: 999px;
-      background: var(--muted);
+    .service-header{display:flex; align-items:center; gap:12px}
+    .service-icon{
+      width:40px; height:40px; border-radius:10px;
+      background:linear-gradient(135deg,#fff,var(--bg));
+      border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      font-size:20px;
     }
-    .badge.ok .b{ background: var(--ok); }
-    .badge.warn .b{ background: var(--warn); }
-    .badge.muted .b{ background: var(--muted); }
+    .service-title{margin:0; font-weight:700}
+    .service-meta{color:var(--muted); font-weight:600}
+    .service-desc{color:var(--text)}
+    .service-actions{display:flex; gap:10px; flex-wrap:wrap}
 
-    /* Modal */
-    dialog{
-      width: min(620px, 92vw);
-      border: 1px solid rgba(201,107,135,.22);
-      border-radius: 18px;
-      padding: 0;
-      box-shadow: 0 20px 60px rgba(43,43,43,.18);
-      background: #fff;
+    /* Schedule */
+    .schedule{
+      display:flex; flex-direction:column; gap:12px;
     }
-    dialog::backdrop{
-      background: rgba(43,43,43,.40);
-      backdrop-filter: blur(3px);
-    }
-    .modal-head{
-      padding: 16px 16px 10px;
-      border-bottom: 1px solid rgba(201,107,135,.15);
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap: 12px;
-      background: linear-gradient(180deg, rgba(244,214,223,.35), #fff);
-      border-top-left-radius: 18px;
-      border-top-right-radius: 18px;
-    }
-    .modal-head h3{
-      margin:0;
-      font-family:"Playfair Display", serif;
-      font-size: 18px;
-    }
-    .modal-head p{
-      margin: 6px 0 0;
-      font-size: 13px;
-      opacity: .9;
-      line-height: 1.4;
-    }
-    .close{
-      background: transparent;
-      border: 1px solid rgba(43,43,43,.15);
-      width: 34px; height: 34px;
-      border-radius: 10px;
-      font-size: 18px;
-      line-height: 1;
-      display:grid;
-      place-items:center;
-    }
+    .legend{display:flex; gap:12px; flex-wrap:wrap; color:var(--muted)}
+    .dot{width:10px; height:10px; border-radius:50%}
+    .dot.ok{background:var(--ok)}
+    .dot.warn{background:var(--warn)}
+    .dot.danger{background:var(--danger)}
 
-    .modal-body{ padding: 14px 16px 16px; }
-    .row{
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      flex-wrap: wrap;
+    .slots{
+      display:grid; gap:10px;
+      grid-template-columns:repeat(3,1fr);
     }
-    .row > *{ flex: 1; min-width: 180px; }
+    .slot{
+      padding:10px 12px; border:1px solid var(--border);
+      border-radius:999px; text-align:center; font-weight:600;
+      background:#fff; cursor:pointer; transition:.15s ease;
+    }
+    .slot[disabled]{opacity:.45; cursor:not-allowed}
+    .slot:hover:not([disabled]){box-shadow:var(--shadow)}
 
-    label{
-      display:block;
-      font-size: 12px;
-      opacity: .85;
-      margin: 0 0 6px;
-    }
-    select, input{
-      width: 100%;
-      padding: 11px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(43,43,43,.14);
-      background: #fff;
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-      outline: none;
-    }
-    select:focus, input:focus{
-      border-color: rgba(201,107,135,.55);
-      box-shadow: 0 0 0 4px rgba(201,107,135,.12);
-    }
-
-    .actions{
-      margin-top: 12px;
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .actions .btn{ flex: 1; min-width: 200px; }
-
+    /* Footer */
     footer{
-      margin-top: 18px;
-      text-align:center;
-      font-size: 12px;
-      opacity: .75;
+      margin-top:var(--space-xl);
+      border-top:1px solid var(--border);
+      background:#fff;
     }
-    footer b{ opacity: .95; }
+    .footer-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:var(--space-lg) 0;
+      color:var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .slots{grid-template-columns:repeat(2,1fr)}
+      .meta{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 520px){
+      .slots{grid-template-columns:1fr}
+      .nav{height:auto; padding:12px 0; gap:10px; flex-wrap:wrap}
+      .footer-inner{flex-direction:column; align-items:flex-start}
+    }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <!-- ========= Header / Navegação ========= -->
+  <header aria-label="Barra de navegação">
+    <div class="container nav">
+      <div class="brand" aria-label="Identidade visual">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Hair by Monica — Só de Segunda</span>
+      </div>
+      <nav class="nav-actions" aria-label="Ações principais">
+        <a class="btn" href="#servicos">Serviços</a>
+        <a class="btn" href="#agendar">Horários</a>
+        <a class="btn btn-primary" id="ctaTop" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-      <div class="brand">
-        <h1>💇‍♀️ Hair by Monica — Só de Segunda</h1>
-        <p>
-          Agendamento simples e elegante. Escolha o serviço, selecione um horário disponível e confirme no WhatsApp.
-        </p>
-        <div class="tag">
-          <span class="dot"></span>
-          Atendimento: <b>Segunda-feira</b> • 09:00–18:00 (almoço 12:00–13:00)
+  <main>
+    <!-- ========= Hero / Contexto ========= -->
+    <section class="container hero" aria-labelledby="hero-title">
+      <div class="card">
+        <h2 id="hero-title">Agendamento simples e elegante</h2>
+        <p class="sub">Escolha o serviço, selecione um horário disponível e confirme pelo WhatsApp.</p>
+
+        <div class="meta" aria-label="Informações de atendimento">
+          <div class="pill">Segundas-feiras</div>
+          <div class="pill">09:00–18:00</div>
+          <div class="pill">Almoço 12:00–13:00</div>
+        </div>
+
+        <div style="margin-top:18px">
+          <p class="sub"><strong>Como funciona:</strong> escolha o serviço → selecione o horário → confirme no WhatsApp com mensagem automática.</p>
+          <p class="sub">Horários carregados em tempo real via API (Google Apps Script + Google Sheets).</p>
+        </div>
+
+        <div style="margin-top:18px">
+          <a class="btn btn-primary" href="#agendar">Ver horários e agendar</a>
         </div>
       </div>
 
-      <div class="cta-top">
-        <div class="pill">
-          <b>Como funciona:</b> você escolhe o serviço → seleciona o horário → abre o WhatsApp com a mensagem pronta.
-        </div>
-        <div class="pill">
-          <b>Horários:</b> carregados em tempo real a partir do Google Sheets (API Apps Script).
-        </div>
-      </div>
-    </header>
+      <!-- ========= Agenda / Slots ========= -->
+      <aside class="card schedule" id="agendar" aria-labelledby="agenda-title">
+        <h2 id="agenda-title">Horários disponíveis</h2>
+        <p class="sub">Exibimos apenas horários com disponibilidade ativa na planilha.</p>
 
-    <main class="grid">
-      <!-- Serviços -->
-      <section class="card">
-        <h2>✨ Serviços</h2>
-
-        <div class="services">
-          <article class="service">
-            <div class="top">
-              <p class="name">✂️ Corte</p>
-              <span class="hint">30–60 min</span>
-            </div>
-            <p class="desc">Corte feminino com finalização.</p>
-            <button class="btn" data-service="Corte">Agendar no WhatsApp</button>
-          </article>
-
-          <article class="service">
-            <div class="top">
-              <p class="name">🎨 Coloração</p>
-              <span class="hint">90–150 min</span>
-            </div>
-            <p class="desc">Coloração e retoque (avaliar previamente).</p>
-            <button class="btn" data-service="Coloração">Agendar no WhatsApp</button>
-          </article>
-
-          <article class="service">
-            <div class="top">
-              <p class="name">💧 Hidratação</p>
-              <span class="hint">45–60 min</span>
-            </div>
-            <p class="desc>Tratamento para brilho e maciez.</p>
-            <button class="btn" data-service="Hidratação">Agendar no WhatsApp</button>
-          </article>
-
-          <article class="service">
-            <div class="top">
-              <p class="name">🌸 Escova</p>
-              <span class="hint">40–60 min</span>
-            </div>
-            <p class="desc">Escova alinhada e acabamento premium.</p>
-            <button class="btn" data-service="Escova">Agendar no WhatsApp</button>
-          </article>
+        <div class="legend" aria-label="Legenda de status">
+          <span><span class="dot ok"></span> Disponível</span>
+          <span><span class="dot warn"></span> Pendente</span>
+          <span><span class="dot danger"></span> Indisponível</span>
         </div>
 
-        <p class="hint" style="margin-top:12px;">
-          Ao clicar em <b>Agendar</b>, você escolhe o horário e o WhatsApp abre com a mensagem pronta.
-        </p>
-      </section>
-
-      <!-- Horários -->
-      <aside class="card">
-        <h2>🕒 Horários</h2>
-        <p class="hint">
-          Exibimos somente horários com <b>Disponível = SIM</b> no Google Sheets.
-        </p>
-
-        <div class="legend">
-          <span class="badge ok"><span class="b"></span> Confirmado</span>
-          <span class="badge warn"><span class="b"></span> Pendente</span>
-          <span class="badge muted"><span class="b"></span> Cancelado</span>
+        <!-- Slots renderizados via JS -->
+        <div class="slots" id="slots" role="list" aria-live="polite">
+          <!-- Fallback inicial (substituído ao carregar API) -->
+          <button class="slot" disabled>Carregando…</button>
+          <button class="slot" disabled>Carregando…</button>
+          <button class="slot" disabled>Carregando…</button>
         </div>
 
-        <hr style="border:none;border-top:1px solid rgba(43,43,43,.08); margin:14px 0;">
-
-        <p class="hint">
-          💡 <b>Dica:</b> para ativar o carregamento real, edite no código:
-          <br><code>CONFIG.SHEETS_API_URL</code> e <code>CONFIG.WHATSAPP_NUMBER</code>.
-        </p>
-
-        <button class="btn secondary" id="openQuick">
-          Ver horários e agendar
-        </button>
+        <div style="display:flex; gap:10px; margin-top:8px">
+          <button class="btn" id="refresh">Atualizar</button>
+          <a class="btn btn-primary" id="ctaAside" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        </div>
       </aside>
-    </main>
+    </section>
 
-    <footer>
-      Projeto por <b>Ana Paula Duarte</b> • Identidade visual premium nude + dourado
-    </footer>
-  </div>
+    <!-- ========= Serviços ========= -->
+    <section class="container section" id="servicos" aria-labelledby="servicos-title">
+      <h3 id="servicos-title">Serviços</h3>
+      <p>Selecione um serviço para montar sua mensagem de agendamento. Duração estimada ajuda a escolher o melhor horário.</p>
 
-  <!-- Modal -->
-  <dialog id="bookingModal" aria-label="Agendamento">
-    <div class="modal-head">
+      <div class="grid" role="list">
+        <!-- Serviço: Corte -->
+        <article class="service" role="listitem">
+          <div class="service-header">
+            <div class="service-icon" aria-hidden="true">✂️</div>
+            <div>
+              <h4 class="service-title">Corte</h4>
+              <div class="service-meta">30–60 min • Finalização inclusa</div>
+            </div>
+          </div>
+          <p class="service-desc">Corte feminino com acabamento premium, pensado para realçar textura e movimento.</p>
+          <div class="service-actions">
+            <button class="btn btn-primary" data-service="Corte">Agendar pelo WhatsApp</button>
+            <button class="btn" data-service="Corte" data-info>Ver horários</button>
+          </div>
+        </article>
+
+        <!-- Serviço: Coloração -->
+        <article class="service" role="listitem">
+          <div class="service-header">
+            <div class="service-icon" aria-hidden="true">🎨</div>
+            <div>
+              <h4 class="service-title">Coloração</h4>
+              <div class="service-meta">90–150 min • Avaliação prévia</div>
+            </div>
+          </div>
+          <p class="service-desc">Coloração e retoque com diagnóstico personalizado para preservar saúde e brilho dos fios.</p>
+          <div class="service-actions">
+            <button class="btn btn-primary" data-service="Coloração">Agendar pelo WhatsApp</button>
+            <button class="btn" data-service="Coloração" data-info>Ver horários</button>
+          </div>
+        </article>
+
+        <!-- Serviço: Hidratação -->
+        <article class="service" role="listitem">
+          <div class="service-header">
+            <div class="service-icon" aria-hidden="true">💧</div>
+            <div>
+              <h4 class="service-title">Hidratação</h4>
+              <div class="service-meta">45–60 min</div>
+            </div>
+          </div>
+          <p class="service-desc">Tratamento de hidratação profunda para recuperar maciez e reduzir frizz.</p>
+          <div class="service-actions">
+            <button class="btn btn-primary" data-service="Hidratação">Agendar pelo WhatsApp</button>
+            <button class="btn" data-service="Hidratação" data-info>Ver horários</button>
+          </div>
+        </article>
+
+        <!-- Serviço: Escova -->
+        <article class="service" role="listitem">
+          <div class="service-header">
+            <div class="service-icon" aria-hidden="true">💨</div>
+            <div>
+              <h4 class="service-title">Escova</h4>
+              <div class="service-meta">40–60 min • Acabamento premium</div>
+            </div>
+          </div>
+          <p class="service-desc">Escova alinhada com proteção térmica e acabamento polido.</p>
+          <div class="service-actions">
+            <button class="btn btn-primary" data-service="Escova">Agendar pelo WhatsApp</button>
+            <button class="btn" data-service="Escova" data-info>Ver horários</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========= Acessibilidade / Ajuda ========= -->
+    <section class="container section" aria-labelledby="ajuda-title">
+      <h3 id="ajuda-title">Dúvidas rápidas</h3>
+      <ul>
+        <li><strong>Atendimento:</strong> apenas segundas-feiras, 09:00–18:00 (almoço 12:00–13:00).</li>
+        <li><strong>Confirmação:</strong> você recebe a mensagem pronta no WhatsApp para finalizar.</li>
+        <li><strong>Disponibilidade:</strong> horários vêm da planilha e são atualizados em tempo real.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ========= Rodapé ========= -->
+  <footer aria-label="Rodapé">
+    <div class="container footer-inner">
+      <div>Projeto por Ana Paula Duarte • Identidade visual premium nude • @duarte.design</div>
       <div>
-        <h3 id="modalTitle">Agendar</h3>
-        <p>Olá, seja bem-vinda! Qual seria o melhor horário pra você?</p>
+        <a class="btn" href="#servicos">Serviços</a>
+        <a class="btn" href="#agendar">Horários</a>
       </div>
-      <button class="close" id="closeModal" aria-label="Fechar">×</button>
     </div>
-
-    <div class="modal-body">
-      <div class="row">
-        <div>
-          <label for="serviceInput">Serviço</label>
-          <input id="serviceInput" type="text" readonly />
-        </div>
-        <div>
-          <label for="slotSelect">Horários disponíveis</label>
-          <select id="slotSelect">
-            <option value="">Carregando...</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="btn" id="sendWhats">Confirmar no WhatsApp</button>
-        <button class="btn secondary" id="reloadSlots">Atualizar horários</button>
-      </div>
-
-      <p class="hint" style="margin-top:10px;">
-        Se algum horário não aparecer, ele está marcado como <b>Disponível = NÃO</b> na planilha.
-      </p>
-    </div>
-  </dialog>
+  </footer>
 
   <script>
-    /**
-     * CONFIGURAÇÃO
-     * 1) WHATSAPP_NUMBER: DDI + DDD + número (somente dígitos). Ex.: 5511999999999
-     * 2) SHEETS_API_URL: URL do Web App do Google Apps Script que retorna JSON
-     */
+    /* =========================================================
+       Configurações (editar conforme seu ambiente)
+       ========================================================= */
     const CONFIG = {
-      WHATSAPP_NUMBER: "55SEUDDDSEUNUMERO",
-      SHEETS_API_URL: "COLE_AQUI_SUA_URL_DA_API_DO_APPS_SCRIPT"
+      SHEETS_API_URL: 'https://SEU_APPS_SCRIPT_EXEC_URL/slots', // endpoint que retorna slots
+      WHATSAPP_NUMBER: '5599999999999',                          // número com DDI (ex.: 55 + DDD + número)
+      BUSINESS_NAME: 'Hair by Monica — Só de Segunda'
     };
 
-    // Elementos
-    const modal = document.getElementById("bookingModal");
-    const closeModalBtn = document.getElementById("closeModal");
-    const openQuickBtn = document.getElementById("openQuick");
+    /* =========================================================
+       Estado simples da página
+       ========================================================= */
+    const state = {
+      selectedService: null,
+      selectedSlot: null,
+      slots: [] // {time:'09:00', status:'ok'|'warn'|'danger', available:true}
+    };
 
-    const serviceInput = document.getElementById("serviceInput");
-    const slotSelect = document.getElementById("slotSelect");
-
-    const sendWhatsBtn = document.getElementById("sendWhats");
-    const reloadSlotsBtn = document.getElementById("reloadSlots");
-
-    // Estado
-    let selectedService = "";
-    let availableSlots = [];
-
-    // Helpers
-    function openModal(serviceName){
-      selectedService = serviceName || "Agendamento";
-      document.getElementById("modalTitle").textContent = `Agendar — ${selectedService}`;
-      serviceInput.value = selectedService;
-      modal.showModal();
-      loadSlots();
+    /* =========================================================
+       Utilidades
+       ========================================================= */
+    function buildWhatsAppMessage(){
+      const service = state.selectedService ? `Serviço: ${state.selectedService}` : 'Serviço: (selecionar)';
+      const slot = state.selectedSlot ? `Horário: ${state.selectedSlot}` : 'Horário: (selecionar)';
+      const text = `Olá! Gostaria de agendar no ${CONFIG.BUSINESS_NAME}.\n${service}\n${slot}\nObrigado(a)!`;
+      return encodeURIComponent(text);
     }
 
-    function closeModal(){
-      modal.close();
-      slotSelect.innerHTML = `<option value="">Selecione um horário</option>`;
+    function getWhatsAppLink(){
+      const msg = buildWhatsAppMessage();
+      return `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${msg}`;
     }
 
-    function buildWhatsAppLink(serviceName, slotText){
-      const message = `Olá, Monica! 😊\nQuero agendar *${serviceName}* para *${slotText}*.\nPode confirmar, por favor?`;
-      const url = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      return url;
+    function setCTA(href){
+      document.getElementById('ctaTop').setAttribute('href', href);
+      document.getElementById('ctaAside').setAttribute('href', href);
     }
 
-    // Carregar horários do Google Sheets via Apps Script (JSON)
-    async function fetchAvailableSlots(){
-      // Se a URL não foi configurada, retorna horários de exemplo
-      if (!CONFIG.SHEETS_API_URL || CONFIG.SHEETS_API_URL.includes("COLE_AQUI")) {
-        return [
-          { date: "Segunda", time: "09:00" },
-          { date: "Segunda", time: "10:00" },
-          { date: "Segunda", time: "11:00" },
-          { date: "Segunda", time: "14:00" },
-          { date: "Segunda", time: "15:00" },
-          { date: "Segunda", time: "16:00" }
-        ];
-      }
-
-      const res = await fetch(CONFIG.SHEETS_API_URL, { method: "GET" });
-      if (!res.ok) throw new Error("Falha ao buscar horários da API.");
-
-      // Esperado: [{date:"2026-01-20", time:"09:00"}, ...]
-      return await res.json();
-    }
-
-    async function loadSlots(){
-      slotSelect.innerHTML = `<option value="">Carregando...</option>`;
-      try{
-        availableSlots = await fetchAvailableSlots();
-
-        if (!Array.isArray(availableSlots) || availableSlots.length === 0){
-          slotSelect.innerHTML = `<option value="">Sem horários disponíveis</option>`;
-          return;
-        }
-
-        slotSelect.innerHTML = `<option value="">Selecione um horário</option>`;
-        for (const s of availableSlots){
-          const label = `${s.date} • ${s.time}`;
-          const opt = document.createElement("option");
-          opt.value = label;
-          opt.textContent = label;
-          slotSelect.appendChild(opt);
-        }
-      }catch(err){
-        slotSelect.innerHTML = `<option value="">Erro ao carregar horários</option>`;
-        console.error(err);
-      }
-    }
-
-    // Eventos
-    document.querySelectorAll("[data-service]").forEach(btn => {
-      btn.addEventListener("click", () => openModal(btn.dataset.service));
-    });
-
-    openQuickBtn.addEventListener("click", () => openModal("Atendimento"));
-    closeModalBtn.addEventListener("click", closeModal);
-
-    reloadSlotsBtn.addEventListener("click", loadSlots);
-
-    sendWhatsBtn.addEventListener("click", () => {
-      const slot = slotSelect.value;
-      if (!slot) {
-        alert("Selecione um horário disponível.");
+    function renderSlots(){
+      const wrap = document.getElementById('slots');
+      wrap.innerHTML = '';
+      if(!state.slots.length){
+        wrap.innerHTML = '<button class="slot" disabled>Nenhum horário disponível</button>';
         return;
       }
+      state.slots.forEach(s=>{
+        const btn = document.createElement('button');
+        btn.className = 'slot';
+        btn.textContent = s.time;
+        btn.disabled = !s.available || s.status === 'danger';
+        btn.setAttribute('aria-label', `Horário ${s.time} ${s.available ? 'disponível' : 'indisponível'}`);
+        btn.addEventListener('click', ()=>{
+          state.selectedSlot = s.time;
+          setCTA(getWhatsAppLink());
+          // feedback visual simples
+          [...wrap.querySelectorAll('.slot')].forEach(el=>el.style.outline='none');
+          btn.style.outline = '2px solid var(--brand)';
+        });
+        wrap.appendChild(btn);
+      });
+    }
 
-      const link = buildWhatsAppLink(selectedService, slot);
-      window.open(link, "_blank", "noopener,noreferrer");
+    async function fetchSlots(){
+      const wrap = document.getElementById('slots');
+      wrap.innerHTML = '<button class="slot" disabled>Carregando…</button>';
+      try{
+        const res = await fetch(CONFIG.SHEETS_API_URL, {method:'GET'});
+        const data = await res.json();
+        // Espera-se um array de objetos: [{time:'09:00', available:true, status:'ok'}]
+        state.slots = Array.isArray(data) ? data : [];
+        renderSlots();
+      }catch(e){
+        wrap.innerHTML = '<button class="slot" disabled>Falha ao carregar. Tente novamente.</button>';
+      }
+    }
+
+    /* =========================================================
+       Interações de serviço
+       ========================================================= */
+    document.querySelectorAll('[data-service]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const service = btn.getAttribute('data-service');
+        state.selectedService = service;
+        setCTA(getWhatsAppLink());
+        // rolar para a agenda se for "Ver horários"
+        if(btn.hasAttribute('data-info')){
+          document.getElementById('agendar').scrollIntoView({behavior:'smooth', block:'start'});
+        }else{
+          // abrir WhatsApp direto
+          window.open(getWhatsAppLink(), '_blank');
+        }
+      });
     });
 
-    // Fecha modal ao clicar fora (fallback)
-    modal.addEventListener("click", (e) => {
-      const rect = modal.getBoundingClientRect();
-      const inDialog = (
-        rect.top <= e.clientY && e.clientY <= rect.bottom &&
-        rect.left <= e.clientX && e.clientX <= rect.right
-      );
-      if (!inDialog) closeModal();
-    });
+    document.getElementById('refresh').addEventListener('click', fetchSlots);
+
+    // Inicialização
+    setCTA(getWhatsAppLink());
+    fetchSlots();
   </script>
 </body>
 </html>
+
+
