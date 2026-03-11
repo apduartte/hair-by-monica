@@ -1,456 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hair by Monica — Só de Segunda</title>
-  <meta name="description" content="Agendamento simples e elegante. Escolha o serviço, selecione um horário disponível e confirme pelo WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* =========
-       Design System
-       ========= */
-    :root{
-      --bg:#f7f6f4;
-      --surface:#ffffff;
-      --text:#1f1f1f;
-      --muted:#6b6b6b;
-      --brand:#8c6a55;      /* nude premium */
-      --brand-strong:#6f523f;
-      --ok:#2e7d32;
-      --warn:#f9a825;
-      --danger:#c62828;
-      --border:#e6e2dc;
-      --shadow:0 8px 24px rgba(0,0,0,.08);
-      --radius:14px;
-      --radius-sm:10px;
-      --space:20px;
-      --space-lg:28px;
-      --space-xl:40px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* Base */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.5;
-    }
-    a{color:var(--brand);text-decoration:none}
-    a:hover{color:var(--brand-strong)}
-    img{max-width:100%;display:block}
+<title>Corte, Escova e Hidratação | Hair by Monica</title>
 
-    /* Layout */
-    .container{
-      width:100%;
-      max-width:1000px;
-      margin:0 auto;
-      padding:0 var(--space);
-    }
-    header{
-      position:sticky; top:0; z-index:10;
-      background:rgba(247,246,244,.85);
-      backdrop-filter:saturate(180%) blur(8px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      height:64px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight:700; letter-spacing:.2px;
-    }
-    .brand-mark{
-      width:36px; height:36px; border-radius:50%;
-      background:linear-gradient(135deg,var(--brand),var(--brand-strong));
-      box-shadow:var(--shadow);
-    }
-    .nav-actions{
-      display:flex; gap:10px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px; padding:10px 16px; border-radius:999px;
-      border:1px solid var(--border); background:var(--surface);
-      color:var(--text); font-weight:600; transition:.2s ease;
-    }
-    .btn:hover{box-shadow:var(--shadow)}
-    .btn-primary{
-      background:var(--brand); color:#fff; border-color:transparent;
-    }
-    .btn-primary:hover{background:var(--brand-strong)}
-    .btn-icon{padding:10px}
+<meta name="description" content="Agende corte, escova ou hidratação com Hair by Monica. Atendimento exclusivo às segundas das 09h às 18h. Reserve pelo WhatsApp.">
 
-    main{padding:var(--space-lg) 0 var(--space-xl)}
+<meta name="keywords" content="corte de cabelo feminino, escova profissional, hidratação capilar, salão de beleza">
 
-    /* Hero */
-    .hero{
-      display:grid; gap:var(--space-lg);
-      grid-template-columns:1.2fr .8fr;
-    }
-    .card{
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:var(--space-lg);
-    }
-    .card h2{margin:0 0 8px}
-    .sub{color:var(--muted); margin:0}
-    .meta{
-      display:grid; gap:10px; margin-top:16px;
-      grid-template-columns:repeat(3,1fr);
-    }
-    .meta .pill{
-      border:1px solid var(--border); border-radius:999px;
-      padding:8px 12px; color:var(--muted); font-weight:600; text-align:center;
-      background:#fff;
-    }
+<meta name="robots" content="index, follow">
 
-    /* Services */
-    .section{margin-top:var(--space-xl)}
-    .section h3{margin:0 0 6px}
-    .section p{color:var(--muted); margin:0 0 var(--space)}
+<meta property="og:title" content="Hair by Monica | Cabelo bonito em uma sessão">
+<meta property="og:description" content="Atendimento exclusivo às segundas das 09h às 18h. Agende seu horário pelo WhatsApp.">
+<meta property="og:type" content="website">
 
-    .grid{
-      display:grid; gap:var(--space);
-      grid-template-columns:repeat(2,1fr);
-    }
-    .service{
-      display:flex; flex-direction:column; gap:12px;
-      border:1px solid var(--border); border-radius:var(--radius-sm);
-      padding:var(--space); background:#fff;
-    }
-    .service-header{display:flex; align-items:center; gap:12px}
-    .service-icon{
-      width:40px; height:40px; border-radius:10px;
-      background:linear-gradient(135deg,#fff,var(--bg));
-      border:1px solid var(--border);
-      display:flex; align-items:center; justify-content:center;
-      font-size:20px;
-    }
-    .service-title{margin:0; font-weight:700}
-    .service-meta{color:var(--muted); font-weight:600}
-    .service-desc{color:var(--text)}
-    .service-actions{display:flex; gap:10px; flex-wrap:wrap}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    /* Schedule */
-    .schedule{
-      display:flex; flex-direction:column; gap:12px;
-    }
-    .legend{display:flex; gap:12px; flex-wrap:wrap; color:var(--muted)}
-    .dot{width:10px; height:10px; border-radius:50%}
-    .dot.ok{background:var(--ok)}
-    .dot.warn{background:var(--warn)}
-    .dot.danger{background:var(--danger)}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .slots{
-      display:grid; gap:10px;
-      grid-template-columns:repeat(3,1fr);
-    }
-    .slot{
-      padding:10px 12px; border:1px solid var(--border);
-      border-radius:999px; text-align:center; font-weight:600;
-      background:#fff; cursor:pointer; transition:.15s ease;
-    }
-    .slot[disabled]{opacity:.45; cursor:not-allowed}
-    .slot:hover:not([disabled]){box-shadow:var(--shadow)}
+<style>
 
-    /* Footer */
-    footer{
-      margin-top:var(--space-xl);
-      border-top:1px solid var(--border);
-      background:#fff;
-    }
-    .footer-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:var(--space-lg) 0;
-      color:var(--muted);
-    }
+body{
+font-family:Inter, sans-serif;
+margin:0;
+background:#f7f6f4;
+color:#1f1f1f;
+}
 
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .slots{grid-template-columns:repeat(2,1fr)}
-      .meta{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width: 520px){
-      .slots{grid-template-columns:1fr}
-      .nav{height:auto; padding:12px 0; gap:10px; flex-wrap:wrap}
-      .footer-inner{flex-direction:column; align-items:flex-start}
-    }
-  </style>
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+header{
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.brand{
+font-weight:700;
+font-size:18px;
+}
+
+.btn{
+background:#8c6a55;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+.hero{
+padding:60px 0;
+text-align:center;
+}
+
+.hero h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#666;
+}
+
+.section{
+margin-top:60px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.card h3{
+margin-top:0;
+}
+
+.slots{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:10px;
+margin-top:20px;
+}
+
+.slot{
+border:1px solid #ddd;
+padding:12px;
+border-radius:30px;
+text-align:center;
+cursor:pointer;
+}
+
+.slot:hover{
+background:#8c6a55;
+color:white;
+}
+
+footer{
+margin-top:60px;
+background:white;
+padding:20px;
+text-align:center;
+color:#777;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+</style>
+
 </head>
 
 <body>
-  <!-- ========= Header / Navegação ========= -->
-  <header aria-label="Barra de navegação">
-    <div class="container nav">
-      <div class="brand" aria-label="Identidade visual">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Hair by Monica — Só de Segunda</span>
-      </div>
-      <nav class="nav-actions" aria-label="Ações principais">
-        <a class="btn" href="#servicos">Serviços</a>
-        <a class="btn" href="#agendar">Horários</a>
-        <a class="btn btn-primary" id="ctaTop" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <!-- ========= Hero / Contexto ========= -->
-    <section class="container hero" aria-labelledby="hero-title">
-      <div class="card">
-        <h2 id="hero-title">Agendamento simples e elegante</h2>
-        <p class="sub">Escolha o serviço, selecione um horário disponível e confirme pelo WhatsApp.</p>
+<header>
 
-        <div class="meta" aria-label="Informações de atendimento">
-          <div class="pill">Segundas-feiras</div>
-          <div class="pill">09:00–18:00</div>
-          <div class="pill">Almoço 12:00–13:00</div>
-        </div>
+<div class="container nav">
 
-        <div style="margin-top:18px">
-          <p class="sub"><strong>Como funciona:</strong> escolha o serviço → selecione o horário → confirme no WhatsApp com mensagem automática.</p>
-          <p class="sub">Horários carregados em tempo real via API (Google Apps Script + Google Sheets).</p>
-        </div>
+<div class="brand">
+Hair by Monica
+</div>
 
-        <div style="margin-top:18px">
-          <a class="btn btn-primary" href="#agendar">Ver horários e agendar</a>
-        </div>
-      </div>
+<a class="btn" href="#agendar">
+Agendar
+</a>
 
-      <!-- ========= Agenda / Slots ========= -->
-      <aside class="card schedule" id="agendar" aria-labelledby="agenda-title">
-        <h2 id="agenda-title">Horários disponíveis</h2>
-        <p class="sub">Exibimos apenas horários com disponibilidade ativa na planilha.</p>
+</div>
 
-        <div class="legend" aria-label="Legenda de status">
-          <span><span class="dot ok"></span> Disponível</span>
-          <span><span class="dot warn"></span> Pendente</span>
-          <span><span class="dot danger"></span> Indisponível</span>
-        </div>
+</header>
 
-        <!-- Slots renderizados via JS -->
-        <div class="slots" id="slots" role="list" aria-live="polite">
-          <!-- Fallback inicial (substituído ao carregar API) -->
-          <button class="slot" disabled>Carregando…</button>
-          <button class="slot" disabled>Carregando…</button>
-          <button class="slot" disabled>Carregando…</button>
-        </div>
+<section class="hero container">
 
-        <div style="display:flex; gap:10px; margin-top:8px">
-          <button class="btn" id="refresh">Atualizar</button>
-          <a class="btn btn-primary" id="ctaAside" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-        </div>
-      </aside>
-    </section>
+<h1>Cabelos Bonitos em Uma Sessão</h1>
 
-    <!-- ========= Serviços ========= -->
-    <section class="container section" id="servicos" aria-labelledby="servicos-title">
-      <h3 id="servicos-title">Serviços</h3>
-      <p>Selecione um serviço para montar sua mensagem de agendamento. Duração estimada ajuda a escolher o melhor horário.</p>
+<p>
+Corte, escova e hidratação com atendimento exclusivo às segundas das 09h às 18h.
+</p>
 
-      <div class="grid" role="list">
-        <!-- Serviço: Corte -->
-        <article class="service" role="listitem">
-          <div class="service-header">
-            <div class="service-icon" aria-hidden="true">✂️</div>
-            <div>
-              <h4 class="service-title">Corte</h4>
-              <div class="service-meta">30–60 min • Finalização inclusa</div>
-            </div>
-          </div>
-          <p class="service-desc">Corte feminino com acabamento premium, pensado para realçar textura e movimento.</p>
-          <div class="service-actions">
-            <button class="btn btn-primary" data-service="Corte">Agendar pelo WhatsApp</button>
-            <button class="btn" data-service="Corte" data-info>Ver horários</button>
-          </div>
-        </article>
+<br>
 
-        <!-- Serviço: Coloração -->
-        <article class="service" role="listitem">
-          <div class="service-header">
-            <div class="service-icon" aria-hidden="true">🎨</div>
-            <div>
-              <h4 class="service-title">Coloração</h4>
-              <div class="service-meta">90–150 min • Avaliação prévia</div>
-            </div>
-          </div>
-          <p class="service-desc">Coloração e retoque com diagnóstico personalizado para preservar saúde e brilho dos fios.</p>
-          <div class="service-actions">
-            <button class="btn btn-primary" data-service="Coloração">Agendar pelo WhatsApp</button>
-            <button class="btn" data-service="Coloração" data-info>Ver horários</button>
-          </div>
-        </article>
+<a class="btn" href="https://wa.me/5599999999999?text=Olá%20gostaria%20de%20agendar%20um%20horário" target="_blank">
+Agendar pelo WhatsApp
+</a>
 
-        <!-- Serviço: Hidratação -->
-        <article class="service" role="listitem">
-          <div class="service-header">
-            <div class="service-icon" aria-hidden="true">💧</div>
-            <div>
-              <h4 class="service-title">Hidratação</h4>
-              <div class="service-meta">45–60 min</div>
-            </div>
-          </div>
-          <p class="service-desc">Tratamento de hidratação profunda para recuperar maciez e reduzir frizz.</p>
-          <div class="service-actions">
-            <button class="btn btn-primary" data-service="Hidratação">Agendar pelo WhatsApp</button>
-            <button class="btn" data-service="Hidratação" data-info>Ver horários</button>
-          </div>
-        </article>
+</section>
 
-        <!-- Serviço: Escova -->
-        <article class="service" role="listitem">
-          <div class="service-header">
-            <div class="service-icon" aria-hidden="true">💨</div>
-            <div>
-              <h4 class="service-title">Escova</h4>
-              <div class="service-meta">40–60 min • Acabamento premium</div>
-            </div>
-          </div>
-          <p class="service-desc">Escova alinhada com proteção térmica e acabamento polido.</p>
-          <div class="service-actions">
-            <button class="btn btn-primary" data-service="Escova">Agendar pelo WhatsApp</button>
-            <button class="btn" data-service="Escova" data-info>Ver horários</button>
-          </div>
-        </article>
-      </div>
-    </section>
+<section class="section container">
 
-    <!-- ========= Acessibilidade / Ajuda ========= -->
-    <section class="container section" aria-labelledby="ajuda-title">
-      <h3 id="ajuda-title">Dúvidas rápidas</h3>
-      <ul>
-        <li><strong>Atendimento:</strong> apenas segundas-feiras, 09:00–18:00 (almoço 12:00–13:00).</li>
-        <li><strong>Confirmação:</strong> você recebe a mensagem pronta no WhatsApp para finalizar.</li>
-        <li><strong>Disponibilidade:</strong> horários vêm da planilha e são atualizados em tempo real.</li>
-      </ul>
-    </section>
-  </main>
+<h2>Serviços</h2>
 
-  <!-- ========= Rodapé ========= -->
-  <footer aria-label="Rodapé">
-    <div class="container footer-inner">
-      <div>Projeto por Ana Paula Duarte • Identidade visual premium nude • @duarte.design</div>
-      <div>
-        <a class="btn" href="#servicos">Serviços</a>
-        <a class="btn" href="#agendar">Horários</a>
-      </div>
-    </div>
-  </footer>
+<div class="services">
 
-  <script>
-    /* =========================================================
-       Configurações (editar conforme seu ambiente)
-       ========================================================= */
-    const CONFIG = {
-      SHEETS_API_URL: 'https://SEU_APPS_SCRIPT_EXEC_URL/slots', // endpoint que retorna slots
-      WHATSAPP_NUMBER: '5599999999999',                          // número com DDI (ex.: 55 + DDD + número)
-      BUSINESS_NAME: 'Hair by Monica — Só de Segunda'
-    };
+<div class="card">
 
-    /* =========================================================
-       Estado simples da página
-       ========================================================= */
-    const state = {
-      selectedService: null,
-      selectedSlot: null,
-      slots: [] // {time:'09:00', status:'ok'|'warn'|'danger', available:true}
-    };
+<h3>Corte</h3>
 
-    /* =========================================================
-       Utilidades
-       ========================================================= */
-    function buildWhatsAppMessage(){
-      const service = state.selectedService ? `Serviço: ${state.selectedService}` : 'Serviço: (selecionar)';
-      const slot = state.selectedSlot ? `Horário: ${state.selectedSlot}` : 'Horário: (selecionar)';
-      const text = `Olá! Gostaria de agendar no ${CONFIG.BUSINESS_NAME}.\n${service}\n${slot}\nObrigado(a)!`;
-      return encodeURIComponent(text);
-    }
+<p>
+Corte feminino com finalização profissional.
+</p>
 
-    function getWhatsAppLink(){
-      const msg = buildWhatsAppMessage();
-      return `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${msg}`;
-    }
+<a class="btn" href="https://wa.me/5599999999999?text=Quero%20agendar%20Corte">
+Agendar
+</a>
 
-    function setCTA(href){
-      document.getElementById('ctaTop').setAttribute('href', href);
-      document.getElementById('ctaAside').setAttribute('href', href);
-    }
+</div>
 
-    function renderSlots(){
-      const wrap = document.getElementById('slots');
-      wrap.innerHTML = '';
-      if(!state.slots.length){
-        wrap.innerHTML = '<button class="slot" disabled>Nenhum horário disponível</button>';
-        return;
-      }
-      state.slots.forEach(s=>{
-        const btn = document.createElement('button');
-        btn.className = 'slot';
-        btn.textContent = s.time;
-        btn.disabled = !s.available || s.status === 'danger';
-        btn.setAttribute('aria-label', `Horário ${s.time} ${s.available ? 'disponível' : 'indisponível'}`);
-        btn.addEventListener('click', ()=>{
-          state.selectedSlot = s.time;
-          setCTA(getWhatsAppLink());
-          // feedback visual simples
-          [...wrap.querySelectorAll('.slot')].forEach(el=>el.style.outline='none');
-          btn.style.outline = '2px solid var(--brand)';
-        });
-        wrap.appendChild(btn);
-      });
-    }
+<div class="card">
 
-    async function fetchSlots(){
-      const wrap = document.getElementById('slots');
-      wrap.innerHTML = '<button class="slot" disabled>Carregando…</button>';
-      try{
-        const res = await fetch(CONFIG.SHEETS_API_URL, {method:'GET'});
-        const data = await res.json();
-        // Espera-se um array de objetos: [{time:'09:00', available:true, status:'ok'}]
-        state.slots = Array.isArray(data) ? data : [];
-        renderSlots();
-      }catch(e){
-        wrap.innerHTML = '<button class="slot" disabled>Falha ao carregar. Tente novamente.</button>';
-      }
-    }
+<h3>Coloração</h3>
 
-    /* =========================================================
-       Interações de serviço
-       ========================================================= */
-    document.querySelectorAll('[data-service]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const service = btn.getAttribute('data-service');
-        state.selectedService = service;
-        setCTA(getWhatsAppLink());
-        // rolar para a agenda se for "Ver horários"
-        if(btn.hasAttribute('data-info')){
-          document.getElementById('agendar').scrollIntoView({behavior:'smooth', block:'start'});
-        }else{
-          // abrir WhatsApp direto
-          window.open(getWhatsAppLink(), '_blank');
-        }
-      });
-    });
+<p>
+Coloração e retoque com diagnóstico capilar.
+</p>
 
-    document.getElementById('refresh').addEventListener('click', fetchSlots);
+<a class="btn" href="https://wa.me/5599999999999?text=Quero%20agendar%20Coloração">
+Agendar
+</a>
 
-    // Inicialização
-    setCTA(getWhatsAppLink());
-    fetchSlots();
-  </script>
+</div>
+
+<div class="card">
+
+<h3>Hidratação</h3>
+
+<p>
+Tratamento profundo para recuperar os fios.
+</p>
+
+<a class="btn" href="https://wa.me/5599999999999?text=Quero%20agendar%20Hidratação">
+Agendar
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Escova</h3>
+
+<p>
+Escova profissional com acabamento premium.
+</p>
+
+<a class="btn" href="https://wa.me/5599999999999?text=Quero%20agendar%20Escova">
+Agendar
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section container" id="agendar">
+
+<h2>Horários disponíveis</h2>
+
+<p>Atendimento às segundas das 09h às 18h.</p>
+
+<div class="slots">
+
+<div class="slot">09:00</div>
+<div class="slot">10:00</div>
+<div class="slot">11:00</div>
+<div class="slot">12:00</div>
+<div class="slot">13:00</div>
+<div class="slot">14:00</div>
+<div class="slot">15:00</div>
+<div class="slot">16:00</div>
+<div class="slot">17:00</div>
+<div class="slot">18:00</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Hair by Monica • Atendimento exclusivo às segundas
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5599999999999" target="_blank">
+
+WhatsApp
+
+</a>
+
 </body>
+
 </html>
-
-
