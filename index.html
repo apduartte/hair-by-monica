@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hair by Monica | Salão de Beleza | Corte, Escova e Hidratação</title>
-
-<meta name="description" content="Salão de beleza especializado em corte de cabelo feminino, escova profissional e hidratação capilar. Agende seu horário pelo WhatsApp.">
-
-<meta name="keywords" content="salão de beleza, corte de cabelo feminino, escova profissional, hidratação capilar, tratamento capilar, agendamento salão">
-
-<meta name="robots" content="index, follow">
+<title>Hair by Monica | Salão de Beleza</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -22,171 +16,117 @@
 
 <header>
 
-<h1>Salão de Beleza Hair by Monica</h1>
+<h1>Hair by Monica</h1>
 
-<p>
-Especialista em <strong>corte de cabelo feminino</strong>, 
-<strong>escova profissional</strong> e 
-<strong>hidratação capilar</strong>.
-</p>
+<p>Especialista em corte feminino, escova profissional e hidratação capilar</p>
 
-<a class="cta" href="#agenda">
-Agendar horário
-</a>
+<a href="#agendamento" class="btn">Agendar Horário</a>
 
 </header>
 
-<section class="beneficios">
 
-<h2>Por que escolher nosso salão de beleza</h2>
+<section class="beneficios container">
 
-<div class="grid">
-
-<div>
-
+<div class="card">
 <h3>Produtos Profissionais</h3>
-
-<p>
-Utilizamos produtos de alta qualidade para garantir 
-o melhor resultado em cada tratamento capilar.
-</p>
-
+<p>Utilizamos produtos de alta qualidade para garantir resultados incríveis.</p>
 </div>
 
-<div>
-
+<div class="card">
 <h3>Atendimento Personalizado</h3>
-
-<p>
-Cada cliente recebe diagnóstico capilar individual 
-para escolher o melhor tratamento para os fios.
-</p>
-
+<p>Cada cliente recebe diagnóstico capilar para escolher o melhor tratamento.</p>
 </div>
 
-<div>
-
+<div class="card">
 <h3>Resultado Imediato</h3>
-
-<p>
-Nosso objetivo é que você saia do salão com cabelo 
-mais saudável, hidratado e com brilho.
-</p>
-
-</div>
-
+<p>Você sai do salão com cabelo saudável, brilhante e alinhado.</p>
 </div>
 
 </section>
 
-<section class="servicos">
 
-<h2>Serviços do salão</h2>
+<section class="servicos container">
 
-<div class="grid">
+<h2>Serviços</h2>
 
-<div class="card">
+<div class="servicos-grid">
 
-<h3>Corte de Cabelo Feminino</h3>
-
-<p>
-Corte profissional com finalização para valorizar 
-o formato do rosto e o estilo da cliente.
-</p>
-
+<div class="servico">
+<h3>Corte Feminino</h3>
+<p>Corte profissional valorizando o formato do rosto.</p>
 </div>
 
-<div class="card">
-
+<div class="servico">
 <h3>Escova Profissional</h3>
-
-<p>
-Escova duradoura que deixa o cabelo alinhado, 
-brilhante e com movimento natural.
-</p>
-
+<p>Cabelo alinhado, com brilho e movimento.</p>
 </div>
 
-<div class="card">
-
+<div class="servico">
 <h3>Hidratação Capilar</h3>
-
-<p>
-Tratamento capilar profundo para recuperar fios 
-danificados e devolver maciez e brilho.
-</p>
-
+<p>Tratamento profundo para recuperar fios danificados.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="depoimentos">
+
+<section class="depoimentos container">
 
 <h2>O que nossas clientes dizem</h2>
 
-<div class="grid">
-
-<div class="card">
-
-<p>★★★★★</p>
-
-<p>
-"Meu cabelo ficou maravilhoso depois da hidratação!"
-</p>
-
+<div class="depoimento">
+★★★★★
+<p>"Meu cabelo ficou maravilhoso depois da hidratação!"</p>
 </div>
 
-<div class="card">
-
-<p>★★★★★</p>
-
-<p>
-"A melhor escova profissional que já fiz."
-</p>
-
-</div>
-
+<div class="depoimento">
+★★★★★
+<p>"A melhor escova profissional que já fiz."</p>
 </div>
 
 </section>
 
-<section id="agenda">
 
-<h2>Agendar horário no salão</h2>
+<section id="agendamento" class="container">
 
-<p>
-Escolha o horário disponível para atendimento.
-</p>
+<h2>Agendar Horário</h2>
+
+<input type="text" id="nome" placeholder="Seu nome">
+
+<select id="servico">
+<option value="">Escolha o serviço</option>
+<option>Corte Feminino</option>
+<option>Escova Profissional</option>
+<option>Hidratação Capilar</option>
+</select>
 
 <div class="horarios">
 
-<button onclick="agendar('09:00')">09:00</button>
-<button onclick="agendar('10:00')">10:00</button>
-<button onclick="agendar('11:00')">11:00</button>
-<button onclick="agendar('12:00')">12:00</button>
-<button onclick="agendar('13:00')">13:00</button>
-<button onclick="agendar('14:00')">14:00</button>
-<button onclick="agendar('15:00')">15:00</button>
-<button onclick="agendar('16:00')">16:00</button>
-<button onclick="agendar('17:00')">17:00</button>
+<button onclick="selecionarHorario('09:00')">09:00</button>
+<button onclick="selecionarHorario('10:00')">10:00</button>
+<button onclick="selecionarHorario('11:00')">11:00</button>
+<button onclick="selecionarHorario('12:00')">12:00</button>
+<button onclick="selecionarHorario('13:00')">13:00</button>
+<button onclick="selecionarHorario('14:00')">14:00</button>
+<button onclick="selecionarHorario('15:00')">15:00</button>
+<button onclick="selecionarHorario('16:00')">16:00</button>
+<button onclick="selecionarHorario('17:00')">17:00</button>
 
 </div>
 
+<button class="btn-agendar" onclick="agendar()">Confirmar Agendamento</button>
+
 </section>
+
 
 <footer>
 
-<p>
-Hair by Monica • Salão de beleza especializado em 
-corte, escova e hidratação capilar.
-</p>
+<p>Hair by Monica • Salão especializado em beleza feminina</p>
 
 </footer>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
