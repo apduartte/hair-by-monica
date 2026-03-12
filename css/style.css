@@ -1,252 +1,265 @@
-/* RESET */
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root{
+
+--cor-primaria:#c2185b;
+--cor-secundaria:#f8bbd0;
+--cor-texto:#333;
+--cor-fundo:#ffffff;
+--cor-cinza:#f5f5f5;
+
+--fonte-principal: 'Segoe UI', Roboto, sans-serif;
+
+--radius:8px;
+
+--sombra:0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+/* =========================================
+   RESET
+========================================= */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0f0f0f;
-color:#f5f5f5;
+font-family:var(--fonte-principal);
+color:var(--cor-texto);
+background:var(--cor-fundo);
 line-height:1.6;
 }
 
-/* CONTAINER */
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-padding:80px 0;
-}
-
-/* HEADER HERO */
+/* =========================================
+   HEADER
+========================================= */
 
 header{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+
 text-align:center;
-background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
-background-size:cover;
-background-position:center;
+padding:60px 20px;
+background:linear-gradient(
+135deg,
+var(--cor-primaria),
+var(--cor-secundaria)
+);
+
+color:white;
+
 }
 
 header h1{
-font-size:60px;
-letter-spacing:4px;
-font-weight:700;
-color:#d4af37;
+font-size:2.5rem;
+margin-bottom:10px;
 }
 
 header p{
-margin-top:15px;
-font-size:20px;
-color:#ddd;
+font-size:1.2rem;
+margin-bottom:30px;
 }
 
-/* BOTÃO LUXO */
+/* CTA */
 
-.btn{
-margin-top:35px;
-background:#d4af37;
-color:black;
-padding:14px 40px;
-border-radius:40px;
+.cta{
+
+display:inline-block;
+
+background:white;
+color:var(--cor-primaria);
+
+padding:14px 28px;
+
+font-weight:bold;
+
+border-radius:var(--radius);
+
 text-decoration:none;
-font-weight:600;
-letter-spacing:1px;
+
 transition:0.3s;
+
+box-shadow:var(--sombra);
+
 }
 
-.btn:hover{
-background:#f0d878;
-transform:scale(1.05);
+.cta:hover{
+
+transform:translateY(-2px);
+
 }
 
-/* BENEFÍCIOS */
+/* =========================================
+   SECTIONS
+========================================= */
 
-.beneficios{
+section{
+
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+
+}
+
+section h2{
+
+text-align:center;
+margin-bottom:40px;
+font-size:2rem;
+
+}
+
+/* GRID */
+
+.grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:40px;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
 }
+
+/* CARDS */
 
 .card{
-background:#1b1b1b;
-padding:35px;
-border-radius:12px;
-border:1px solid #333;
+
+background:white;
+
+padding:25px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--sombra);
+
 transition:0.3s;
+
 }
 
 .card:hover{
-border-color:#d4af37;
-transform:translateY(-6px);
+
+transform:translateY(-5px);
+
 }
 
-.card h3{
-color:#d4af37;
+/* =========================================
+   BENEFÍCIOS
+========================================= */
+
+.beneficios{
+
+background:var(--cor-cinza);
+
+}
+
+/* =========================================
+   SERVIÇOS
+========================================= */
+
+.servicos .card h3{
+
+color:var(--cor-primaria);
 margin-bottom:10px;
+
 }
 
-/* SERVIÇOS */
-
-.servicos h2{
-text-align:center;
-font-size:36px;
-margin-bottom:50px;
-color:#d4af37;
-letter-spacing:2px;
-}
-
-.servicos-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
-}
-
-.servico{
-background:#1b1b1b;
-padding:35px;
-border-radius:12px;
-border:1px solid #333;
-transition:0.3s;
-}
-
-.servico:hover{
-border-color:#d4af37;
-transform:translateY(-8px);
-}
-
-.servico h3{
-color:#d4af37;
-margin-bottom:10px;
-}
-
-/* DEPOIMENTOS */
+/* =========================================
+   DEPOIMENTOS
+========================================= */
 
 .depoimentos{
+
+background:var(--cor-cinza);
+
 text-align:center;
+
 }
 
-.depoimentos h2{
-font-size:36px;
-margin-bottom:40px;
-color:#d4af37;
-}
+/* =========================================
+   AGENDA
+========================================= */
 
-.depoimento{
-background:#1b1b1b;
-padding:30px;
-border-radius:12px;
-margin:20px auto;
-max-width:600px;
-border:1px solid #333;
-font-style:italic;
-}
+#agenda{
 
-/* AGENDAMENTO */
-
-#agendamento h2{
 text-align:center;
-font-size:36px;
-margin-bottom:30px;
-color:#d4af37;
-}
 
-#agendamento input,
-#agendamento select{
-width:100%;
-padding:14px;
-margin:12px 0;
-border-radius:8px;
-border:1px solid #444;
-background:#1b1b1b;
-color:white;
-font-size:15px;
 }
-
-/* HORÁRIOS */
 
 .horarios{
+
 display:flex;
+
 flex-wrap:wrap;
-gap:12px;
-margin-top:10px;
+
+justify-content:center;
+
+gap:10px;
+
+margin-top:20px;
+
 }
 
 .horarios button{
-padding:10px 20px;
-border-radius:30px;
-border:1px solid #d4af37;
-background:transparent;
-color:#d4af37;
+
+padding:12px 18px;
+
+border:none;
+
+background:var(--cor-primaria);
+
+color:white;
+
+font-weight:bold;
+
+border-radius:var(--radius);
+
 cursor:pointer;
-transition:0.3s;
+
+transition:0.2s;
+
 }
 
 .horarios button:hover{
-background:#d4af37;
-color:black;
+
+background:#880e4f;
+transform:scale(1.05);
+
 }
 
-/* BOTÃO AGENDAR */
-
-.btn-agendar{
-margin-top:25px;
-background:#d4af37;
-color:black;
-padding:16px 40px;
-border:none;
-border-radius:40px;
-font-size:16px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
-
-.btn-agendar:hover{
-background:#f0d878;
-}
-
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 
 footer{
-background:black;
-color:#aaa;
+
+background:#222;
+
+color:#ddd;
+
 text-align:center;
-padding:40px;
-margin-top:60px;
-border-top:1px solid #222;
+
+padding:30px;
+
+font-size:0.9rem;
+
 }
 
-/* RESPONSIVO */
+/* =========================================
+   RESPONSIVO
+========================================= */
 
 @media(max-width:768px){
 
 header h1{
-font-size:38px;
+font-size:2rem;
 }
 
-header p{
-font-size:16px;
-}
-
-.container{
-padding:50px 0;
-}
-
-.servicos h2,
-.depoimentos h2,
-#agendamento h2{
-font-size:28px;
+section{
+padding:40px 20px;
 }
 
 }
