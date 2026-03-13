@@ -1,0 +1,99 @@
+﻿
+```css
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#fafafa;
+color:#333;
+}
+
+.hero{
+height:70vh;
+background-image:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.5);
+padding:40px;
+text-align:center;
+color:white;
+border-radius:10px;
+}
+
+.cta{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#e91e63;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+.servicos, .depoimentos, #agenda{
+padding:60px 20px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.horarios button{
+margin:8px;
+padding:12px 18px;
+border:none;
+background:#e91e63;
+color:white;
+border-radius:20px;
+cursor:pointer;
+}
+
+.mapa{
+padding:50px;
+text-align:center;
+background:#fff;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#111;
+color:white;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 18px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+```
