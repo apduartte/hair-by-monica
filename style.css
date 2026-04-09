@@ -1,99 +1,147 @@
-﻿
-```css
+﻿/* Reset e Geral */
 body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#fafafa;
-color:#333;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fdfdfd;
+  color:#333;
+  line-height:1.6;
 }
 
+/* Hero */
 .hero{
-height:70vh;
-background-image:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
+  height:70vh;
+  background-image:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-
 .hero-overlay{
-background:rgba(0,0,0,0.5);
-padding:40px;
-text-align:center;
-color:white;
-border-radius:10px;
+  background:rgba(0,0,0,0.5);
+  padding:40px;
+  text-align:center;
+  color:white;
+  border-radius:10px;
 }
-
+.hero-overlay h1{
+  font-size:2.8rem;
+  font-weight:800;
+  margin-bottom:15px;
+  line-height:1.2;
+}
+.hero-overlay p{
+  font-size:1.1rem;
+  margin-bottom:20px;
+}
 .cta{
-display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:#e91e63;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
+  display:inline-block;
+  padding:15px 30px;
+  background:#e91e63;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cta:hover{
+  transform: translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
 
-.servicos, .depoimentos, #agenda{
-padding:60px 20px;
-text-align:center;
+/* Seções */
+.servicos, .depoimentos{
+  padding:60px 20px;
+  text-align:center;
 }
 
+/* Grid */
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:30px;
 }
 
+/* Cards */
 .card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
 .card img{
-width:100%;
-border-radius:10px;
-margin-bottom:10px;
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
 }
 
+/* FAQ */
+details{
+  margin:15px auto;
+  max-width:600px;
+  padding:10px 15px;
+  border-radius:10px;
+  background:#f9f9f9;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+summary{
+  cursor:pointer;
+  font-weight:bold;
+  font-size:1.1rem;
+}
+
+/* Botões Horários */
 .horarios button{
-margin:8px;
-padding:12px 18px;
-border:none;
-background:#e91e63;
-color:white;
-border-radius:20px;
-cursor:pointer;
+  margin:8px;
+  padding:12px 18px;
+  border:none;
+  background:#e91e63;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+.horarios button:hover{
+  background:#ff4081;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
 }
 
-.mapa{
-padding:50px;
-text-align:center;
-background:#fff;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#111;
-color:white;
-}
-
+/* WhatsApp Flutuante */
 .whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:14px 18px;
-border-radius:40px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:transform 0.3s ease;
 }
-```
+.whatsapp-float:hover{
+  transform:scale(1.1);
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#111;
+  color:white;
+}
+
+/* Responsivo */
+@media(max-width:768px){
+  .hero-overlay h1{font-size:2rem;}
+  .cta{width:80%; text-align:center;}
+}
