@@ -1,150 +1,543 @@
-/* Reset e Geral */
-body{
+```css
+/* =========================================
+   RESET GLOBAL
+========================================= */
+
+*{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:#fdfdfd;
-  color:#333;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:Arial, Helvetica, sans-serif;
+
+  background:#f8f8f8;
+
+  color:#222;
+
   line-height:1.6;
+
+  overflow-x:hidden;
+
 }
 
-/* Hero */
-.hero{
-  height:75vh;
-  background-image:linear-gradient(
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.4)
-  ), url("../images/hero.jpg");
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.hero-overlay{
-  background:rgba(0,0,0,0.5);
-  padding:40px;
-  text-align:center;
-  color:white;
-  border-radius:10px;
-}
-.hero-overlay h1{
-  font-size:2.8rem;
-  font-weight:800;
-  margin-bottom:15px;
-  line-height:1.2;
-}
-.hero-overlay p{
-  font-size:1.1rem;
-  margin-bottom:20px;
-}
-.cta{
-  display:inline-block;
-  padding:15px 30px;
-  background:#e91e63;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.cta:hover{
-  transform: translateY(-3px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+/* =========================================
+   CONTAINER PADRÃO
+========================================= */
+
+section{
+
+  padding:80px 20px;
+
 }
 
-/* Seções */
-.servicos, .depoimentos{
-  padding:60px 20px;
-  text-align:center;
-}
+.container{
 
-/* Grid */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  margin-top:30px;
-}
-
-/* Cards */
-.card{
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  display:flex;
-  flex-direction:column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover{
-  transform: translateY(-5px);
-  box-shadow:0 12px 25px rgba(0,0,0,0.15);
-}
-.card img{
   width:100%;
-  border-radius:10px;
-  margin-bottom:10px;
+
+  max-width:1200px;
+
+  margin:0 auto;
+
 }
 
-/* FAQ */
-details{
-  margin:15px auto;
-  max-width:600px;
-  padding:10px 15px;
-  border-radius:10px;
-  background:#f9f9f9;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
-summary{
-  cursor:pointer;
-  font-weight:bold;
-  font-size:1.1rem;
-}
+/* =========================================
+   HERO
+========================================= */
 
-/* Botões Horários */
-.horarios button{
-  margin:8px;
-  padding:12px 18px;
-  border:none;
-  background:#e91e63;
-  color:white;
-  border-radius:20px;
-  cursor:pointer;
-  transition:all 0.3s ease;
-}
-.horarios button:hover{
-  background:#ff4081;
-  box-shadow:0 6px 20px rgba(0,0,0,0.2);
-}
+.hero{
 
-/* WhatsApp Flutuante */
-.whatsapp-float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-  transition:transform 0.3s ease;
-}
-.whatsapp-float:hover{
-  transform:scale(1.1);
-}
+  min-height:100vh;
 
-/* Footer */
-footer{
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
+    url("../images/hero.jpg");
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
   text-align:center;
+
   padding:20px;
-  background:#111;
-  color:white;
+
 }
 
-/* Responsivo */
-@media(max-width:768px){
-  .hero-overlay h1{font-size:2rem;}
-  .cta{width:80%; text-align:center;}
+.hero-overlay{
+
+  background:rgba(0,0,0,0.5);
+
+  padding:50px 40px;
+
+  border-radius:16px;
+
+  max-width:700px;
+
+  width:100%;
+
+  color:white;
+
+  backdrop-filter:blur(3px);
+
 }
+
+.hero-overlay h1{
+
+  font-size:3rem;
+
+  line-height:1.2;
+
+  margin-bottom:20px;
+
+  font-weight:800;
+
+}
+
+.hero-overlay p{
+
+  font-size:1.2rem;
+
+  margin-bottom:30px;
+
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.cta{
+
+  display:inline-block;
+
+  background:#e91e63;
+
+  color:white;
+
+  text-decoration:none;
+
+  border:none;
+
+  padding:16px 32px;
+
+  border-radius:40px;
+
+  font-weight:bold;
+
+  font-size:1rem;
+
+  cursor:pointer;
+
+  transition:all 0.3s ease;
+
+}
+
+.cta:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:0 10px 24px rgba(0,0,0,0.2);
+
+}
+
+/* =========================================
+   WHATSAPP FLOAT
+========================================= */
+
+.whatsapp-float{
+
+  position:fixed;
+
+  right:20px;
+
+  bottom:20px;
+
+  background:#25D366;
+
+  color:white;
+
+  text-decoration:none;
+
+  padding:14px 18px;
+
+  border-radius:50px;
+
+  font-weight:bold;
+
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
+
+  z-index:999;
+
+  transition:all 0.3s ease;
+
+}
+
+.whatsapp-float:hover{
+
+  transform:scale(1.05);
+
+}
+
+/* =========================================
+   TÍTULOS DAS SEÇÕES
+========================================= */
+
+section h2{
+
+  text-align:center;
+
+  font-size:2.4rem;
+
+  margin-bottom:20px;
+
+  color:#111;
+
+}
+
+section p{
+
+  text-align:center;
+
+  max-width:700px;
+
+  margin:0 auto;
+
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap:30px;
+
+  margin-top:40px;
+
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card{
+
+  background:white;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+
+  transition:all 0.3s ease;
+
+}
+
+.card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+
+}
+
+.card img{
+
+  width:100%;
+
+  height:320px;
+
+  object-fit:cover;
+
+  display:block;
+
+}
+
+.card h3{
+
+  font-size:1.4rem;
+
+  padding:20px 20px 10px;
+
+  color:#111;
+
+}
+
+.card p{
+
+  padding:0 20px 24px;
+
+  text-align:left;
+
+  color:#555;
+
+}
+
+/* =========================================
+   RESULTADOS
+========================================= */
+
+.resultado-img{
+
+  width:100%;
+
+  height:400px;
+
+  object-fit:cover;
+
+  display:block;
+
+}
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+.agendamento-form{
+
+  max-width:520px;
+
+  margin:40px auto 0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+}
+
+.agendamento-form label{
+
+  font-weight:bold;
+
+  color:#111;
+
+}
+
+.agendamento-form input,
+.agendamento-form select{
+
+  width:100%;
+
+  padding:16px;
+
+  border:1px solid #ddd;
+
+  border-radius:10px;
+
+  font-size:1rem;
+
+  background:white;
+
+}
+
+.agendamento-form input:focus,
+.agendamento-form select:focus{
+
+  outline:none;
+
+  border-color:#e91e63;
+
+  box-shadow:0 0 0 4px rgba(233,30,99,0.1);
+
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+details{
+
+  max-width:800px;
+
+  margin:20px auto;
+
+  background:white;
+
+  border-radius:12px;
+
+  padding:20px;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+
+}
+
+summary{
+
+  cursor:pointer;
+
+  font-weight:bold;
+
+  font-size:1.1rem;
+
+}
+
+details p{
+
+  margin-top:10px;
+
+  text-align:left;
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+  background:#111;
+
+  color:white;
+
+  text-align:center;
+
+  padding:30px 20px;
+
+}
+
+/* =========================================
+   RESPONSIVO TABLET
+========================================= */
+
+@media(max-width:992px){
+
+  .hero-overlay h1{
+
+    font-size:2.5rem;
+
+  }
+
+}
+
+/* =========================================
+   RESPONSIVO MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  section{
+
+    padding:60px 20px;
+
+  }
+
+  .hero{
+
+    min-height:90vh;
+
+  }
+
+  .hero-overlay{
+
+    padding:35px 25px;
+
+  }
+
+  .hero-overlay h1{
+
+    font-size:2rem;
+
+  }
+
+  .hero-overlay p{
+
+    font-size:1rem;
+
+  }
+
+  section h2{
+
+    font-size:1.8rem;
+
+  }
+
+  .card img{
+
+    height:260px;
+
+  }
+
+  .resultado-img{
+
+    height:300px;
+
+  }
+
+  .cta{
+
+    width:100%;
+
+    text-align:center;
+
+  }
+
+  .whatsapp-float{
+
+    right:15px;
+
+    bottom:15px;
+
+    padding:12px 16px;
+
+    font-size:0.9rem;
+
+  }
+
+}
+
+/* =========================================
+   MOBILE PEQUENO
+========================================= */
+
+@media(max-width:480px){
+
+  .hero-overlay h1{
+
+    font-size:1.7rem;
+
+  }
+
+  .hero-overlay{
+
+    padding:28px 20px;
+
+  }
+
+  .card img{
+
+    height:220px;
+
+  }
+
+  .resultado-img{
+
+    height:240px;
+
+  }
+
+}
+```
