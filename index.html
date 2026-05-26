@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hair by Monica | Transforme sua Beleza</title>
 
-  <meta name="description" content="Hair by Monica oferece cortes, escovas e tratamentos de alta qualidade. Agende seu horário pelo WhatsApp.">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Hair by Monica | Beleza, Sofisticação e Cuidado Premium</title>
+
+  <meta
+    name="description"
+    content="Hair by Monica oferece cortes, escovas, alisamentos e tratamentos capilares premium com atendimento personalizado."
+  >
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
@@ -15,154 +25,365 @@
 
   <!-- JS -->
   <script src="js/main.js" defer></script>
+
 </head>
 
 <body>
 
-<!-- WhatsApp Flutuante -->
-<a href="https://wa.me/5511989687923" class="whatsapp-float" target="_blank">
-  💬 WhatsApp
-</a>
-
-<!-- HERO -->
-<header class="hero" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80');">
-  <div class="hero-overlay">
-    <h1>Transforme seu cabelo, realce sua essência</h1>
-    <p>Atendimento personalizado com sofisticação, técnica e cuidado premium.</p>
-    <a href="https://wa.me/5511989687923" class="cta" target="_blank">Agende seu horário</a>
-  </div>
-</header>
-
-<!-- SERVIÇOS -->
-<section class="servicos">
-  <h2>Experiências de Beleza Personalizadas</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80" alt="Corte feminino elegante">
-      <h3>Corte Feminino</h3>
-      <p>Design alinhado ao seu estilo, valorizando sua identidade.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1573497019419-64a3eb362e0f?auto=format&fit=crop&w=600&q=80" alt="Escova profissional">
-      <h3>Escova e Finalização</h3>
-      <p>Brilho, leveza e movimento com acabamento impecável.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1606813901984-3b09f9b7a918?auto=format&fit=crop&w=600&q=80" alt="Tratamento capilar">
-      <h3>Hidratação e Tratamentos</h3>
-      <p>Recuperação profunda com tecnologia e produtos de alta qualidade.</p>
-    </div>
-
-  </div>
-
-  <a href="https://wa.me/5511989687923" class="cta" target="_blank">Reservar agora</a>
-</section>
-
-<!-- ANTES E DEPOIS -->
-<section class="servicos">
-  <h2>Antes e Depois</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1564564295391-7f24f26f568b?auto=format&fit=crop&w=600&q=80" alt="Antes do corte">
-      <img src="https://images.unsplash.com/photo-1588776814546-1d0ec7f0f408?auto=format&fit=crop&w=600&q=80" alt="Depois do corte">
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1588776814546-1d0ec7f0f408?auto=format&fit=crop&w=600&q=80" alt="Antes da escova">
-      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Depois da escova">
-    </div>
-
-  </div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section class="depoimentos">
-  <h2>Clientes Encantadas</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <p>“Nunca me senti tão confiante. Atendimento impecável.”</p>
-      <strong>- Juliana S.</strong>
-    </div>
-
-    <div class="card">
-      <p>“Meu cabelo ficou incrível. Experiência premium.”</p>
-      <strong>- Camila R.</strong>
-    </div>
-
-    <div class="card">
-      <p>“Sofisticação e resultado perfeito. Recomendo.”</p>
-      <strong>- Fernanda M.</strong>
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="servicos">
-  <h2>Dúvidas Frequentes</h2>
-
-  <details>
-    <summary>Quanto tempo dura uma escova?</summary>
-    <p>Em média 1 hora, dependendo do cabelo.</p>
-  </details>
-
-  <details>
-    <summary>Formas de pagamento</summary>
-    <p>Pix, cartão ou dinheiro.</p>
-  </details>
-
-  <details>
-    <summary>Como reagendar?</summary>
-    <p>Entre em contato pelo WhatsApp.</p>
-  </details>
-</section>
-
-<!-- CTA FINAL -->
-<section class="servicos">
-  <h2>Vagas Limitadas</h2>
-  <p>Garanta seu horário e tenha uma experiência exclusiva.</p>
-<form class="agendamento-form" onsubmit="enviarFormulario(event)">
-
-  <input 
-    type="text" 
-    id="nome" 
-    placeholder="Seu nome" 
-    required
+  <!-- WHATSAPP FLOAT -->
+  <a
+    href="https://wa.me/5511989687923"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
   >
+    💬 WhatsApp
+  </a>
 
-  <input 
-    type="text" 
-    id="whatsapp" 
-    placeholder="WhatsApp" 
-    required
-  >
+  <!-- HERO -->
+  <header class="hero">
 
-  <select id="servico" required>
-    <option value="">Selecione um serviço</option>
-    <option>Corte Feminino</option>
-    <option>Escova Premium</option>
-    <option>Hidratação</option>
-  </select>
+    <div class="hero-overlay">
 
-  <button type="submit" class="cta">
-    Agendar agora
-  </button>
+      <h1>
+        Transforme seu cabelo, realce sua essência
+      </h1>
 
-</form>
+      <p>
+        Atendimento personalizado com sofisticação,
+        técnica e cuidado premium.
+      </p>
 
-</section>
+      <a
+        href="https://wa.me/5511989687923"
+        class="cta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Agende seu horário
+      </a>
 
-<footer>
-  <p>&copy; 2026 Hair by Monica. Todos os direitos reservados.</p>
-</footer>
+    </div>
+
+  </header>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos">
+
+    <h2>Experiências de Beleza Personalizadas</h2>
+
+    <div class="grid">
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80"
+          alt="Corte feminino elegante"
+          loading="lazy"
+          width="600"
+          height="400"
+        >
+
+        <h3>Corte Feminino</h3>
+
+        <p>
+          Design alinhado ao seu estilo,
+          valorizando sua identidade.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1573497019419-64a3eb362e0f?auto=format&fit=crop&w=600&q=80"
+          alt="Escova profissional premium"
+          loading="lazy"
+          width="600"
+          height="400"
+        >
+
+        <h3>Escova e Finalização</h3>
+
+        <p>
+          Brilho, leveza e movimento
+          com acabamento impecável.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1606813901984-3b09f9b7a918?auto=format&fit=crop&w=600&q=80"
+          alt="Tratamento capilar profissional"
+          loading="lazy"
+          width="600"
+          height="400"
+        >
+
+        <h3>Hidratação e Tratamentos</h3>
+
+        <p>
+          Recuperação profunda com tecnologia
+          e produtos de alta qualidade.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="antes-depois">
+
+    <h2>Resultados que Transformam</h2>
+
+    <p>
+      Sofisticação, técnica e cuidado
+      em cada detalhe.
+    </p>
+
+    <div class="grid">
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="images/alisamento-perfeito.jpeg"
+          alt="Alisamento profissional com brilho intenso"
+          class="resultado-img"
+          loading="lazy"
+          width="600"
+          height="400"
+        >
+
+        <h3>Alisamento Profissional</h3>
+
+        <p>
+          Redução de volume, brilho intenso
+          e alinhamento perfeito.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="images/escova-premium.jpeg"
+          alt="Escova premium profissional com acabamento sofisticado"
+          class="resultado-img"
+          loading="lazy"
+          width="600"
+          height="400"
+        >
+
+        <h3>Escova Premium</h3>
+
+        <p>
+          Movimento natural, leveza
+          e acabamento sofisticado.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos">
+
+    <h2>Clientes Encantadas</h2>
+
+    <div class="grid">
+
+      <!-- CARD -->
+      <div class="card">
+
+        <p>
+          “Nunca me senti tão confiante.
+          Atendimento impecável.”
+        </p>
+
+        <strong>- Juliana S.</strong>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <p>
+          “Meu cabelo ficou incrível.
+          Experiência premium.”
+        </p>
+
+        <strong>- Camila R.</strong>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <p>
+          “Sofisticação e resultado perfeito.
+          Recomendo.”
+        </p>
+
+        <strong>- Fernanda M.</strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+
+    <h2>Dúvidas Frequentes</h2>
+
+    <details>
+
+      <summary>
+        Quanto tempo dura uma escova?
+      </summary>
+
+      <p>
+        Em média 1 hora,
+        dependendo do cabelo.
+      </p>
+
+    </details>
+
+    <details>
+
+      <summary>
+        Formas de pagamento
+      </summary>
+
+      <p>
+        Pix, cartão ou dinheiro.
+      </p>
+
+    </details>
+
+    <details>
+
+      <summary>
+        Como reagendar?
+      </summary>
+
+      <p>
+        Entre em contato pelo WhatsApp.
+      </p>
+
+    </details>
+
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="agendamento">
+
+    <h2>Vagas Limitadas</h2>
+
+    <p>
+      Garanta seu horário
+      e tenha uma experiência exclusiva.
+    </p>
+
+    <form
+      class="agendamento-form"
+      onsubmit="enviarFormulario(event)"
+    >
+
+      <!-- NOME -->
+      <label for="nome">
+        Nome
+      </label>
+
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Seu nome"
+        required
+      >
+
+      <!-- WHATSAPP -->
+      <label for="whatsapp">
+        WhatsApp
+      </label>
+
+      <input
+        type="text"
+        id="whatsapp"
+        name="whatsapp"
+        placeholder="(11) 99999-9999"
+        required
+      >
+
+      <!-- SERVIÇO -->
+      <label for="servico">
+        Serviço
+      </label>
+
+      <select
+        id="servico"
+        name="servico"
+        required
+      >
+
+        <option value="">
+          Selecione um serviço
+        </option>
+
+        <option value="Corte Feminino">
+          Corte Feminino
+        </option>
+
+        <option value="Escova Premium">
+          Escova Premium
+        </option>
+
+        <option value="Alisamento Profissional">
+          Alisamento Profissional
+        </option>
+
+        <option value="Hidratação">
+          Hidratação
+        </option>
+
+      </select>
+
+      <!-- BOTÃO -->
+      <button
+        type="submit"
+        class="cta"
+      >
+        Agendar agora
+      </button>
+
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      &copy; 2026 Hair by Monica.
+      Todos os direitos reservados.
+    </p>
+
+  </footer>
 
 </body>
+
 </html>
