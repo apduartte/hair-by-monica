@@ -114,8 +114,7 @@ a {
   min-height: 100vh;
 
   background:
-    url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1600&q=80')
-    center center / cover no-repeat;
+    url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
 
   display: flex;
   align-items: center;
@@ -129,11 +128,9 @@ a {
   inset: 0;
 
   background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.65),
-      rgba(0,0,0,0.78)
-    );
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.78));
 }
 
 .hero-content {
@@ -157,10 +154,10 @@ a {
   border-radius: 999px;
 
   background:
-    rgba(255,255,255,0.10);
+    rgba(255, 255, 255, 0.10);
 
   border:
-    1px solid rgba(255,255,255,0.15);
+    1px solid rgba(255, 255, 255, 0.15);
 
   backdrop-filter: blur(12px);
 
@@ -171,11 +168,11 @@ a {
 }
 
 .hero h1 {
-  font-size: clamp(2.7rem, 6vw, 5.5rem);
-  line-height: 1.05;
-  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 1.08;
+  font-weight: 980px;
 
-  margin-bottom: 28px;
+  margin-bottom: 24px auto;
 }
 
 .hero-description {
@@ -184,7 +181,7 @@ a {
   margin: 0 auto 38px;
 
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-infos {
@@ -199,10 +196,10 @@ a {
 
 .hero-infos span {
   background:
-    rgba(255,255,255,0.10);
+    rgba(255, 255, 255, 0.10);
 
   border:
-    1px solid rgba(255,255,255,0.12);
+    1px solid rgba(255, 255, 255, 0.12);
 
   padding: 12px 20px;
 
@@ -225,11 +222,9 @@ a {
   border-radius: 999px;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       var(--primary),
-      var(--primary-dark)
-    );
+      var(--primary-dark));
 
   color: white;
 
@@ -451,10 +446,10 @@ section {
 
 .depoimento-card {
   background:
-    rgba(255,255,255,0.05);
+    rgba(255, 255, 255, 0.05);
 
   border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid rgba(255, 255, 255, 0.08);
 
   padding: 34px;
 
@@ -466,7 +461,7 @@ section {
 .depoimento-card p {
   margin-bottom: 20px;
 
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .depoimento-card strong {
@@ -507,7 +502,7 @@ section {
   margin-bottom: 18px;
 
   box-shadow:
-    0 6px 25px rgba(0,0,0,0.04);
+    0 6px 25px rgba(0, 0, 0, 0.04);
 }
 
 .faq summary {
@@ -536,7 +531,7 @@ footer {
   background: #0f0f0f;
 
   color:
-    rgba(255,255,255,0.7);
+    rgba(255, 255, 255, 0.7);
 
   padding: 45px 0;
 
@@ -546,21 +541,7 @@ footer {
 /* =========================
    RESPONSIVO
 ========================= */
-
-@media (max-width: 992px) {
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-}
-
 @media (max-width: 768px) {
-
   section {
     padding: 80px 0;
   }
@@ -570,11 +551,13 @@ footer {
   }
 
   .hero h1 {
-    font-size: 2.7rem;
+    font-size: clamp(2rem, 10vw, 3.1rem);
+    line-height: 1.12;
   }
 
   .hero-description {
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   .hero-infos {
@@ -597,18 +580,15 @@ footer {
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
-
     padding: 12px 18px;
-
     font-size: 0.9rem;
   }
-
 }
 
 @media (max-width: 480px) {
-
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.9rem, 11vw, 2.5rem);
+    line-height: 1.15;
   }
 
   .section-header h2,
@@ -619,5 +599,4 @@ footer {
   .card-content {
     padding: 24px;
   }
-
 }
