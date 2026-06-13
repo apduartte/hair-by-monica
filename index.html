@@ -1,505 +1,552 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-  <!DOCTYPE html>
-  <html lang="pt-BR">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <head>
+  <title>Monica Hair | Salão de beleza no Tatuapé</title>
 
-    <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="Monica Hair: salão de beleza no Tatuapé com corte feminino, escova, hidratação capilar, colorimetria, penteados, maquiagem profissional e escova progressiva sem formol. Atendimento de segunda a sábado, das 09h às 18h, na Rua Padre Estêvão Pernet, 392 — Tatuapé."
+  />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://hair-by-monica.vercel.app/" />
 
-    <title>Salão de beleza no Tatuapé | Corte Feminino, Escova e Hidratação</title>
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Monica Hair | Salão de beleza no Tatuapé" />
+  <meta
+    property="og:description"
+    content="Atendimento personalizado de segunda a sábado, das 09h às 18h, na Rua Padre Estêvão Pernet, 392 — Tatuapé. Agende pelo WhatsApp."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://hair-by-monica.vercel.app/images/capa-social.jpg" />
+  <meta property="og:url" content="https://hair-by-monica.vercel.app/" />
+  <meta property="og:site_name" content="Monica Hair" />
 
-    <meta name="description"
-      content="Monica Hair salão de beleza no Tatuapé: corte feminino, escova, hidratação e escova progressiva sem formol com atendimento personalizado. Atendimento de segunda a sábado, das 09h às 18h, na Rua Padre Estêvão Penet, 392. Fácil acesso para Carrão, Belém, Vila Carrão e Jardim Anália Franco." />
+  <!-- SEO LOCAL / DADOS ESTRUTURADOS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Monica Hair",
+    "description": "Salão de beleza no Tatuapé com corte feminino, escova, hidratação capilar, colorimetria, penteados, maquiagem profissional e escova progressiva sem formol.",
+    "url": "https://hair-by-monica.vercel.app/",
+    "telephone": "+5511989687923",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Padre Estêvão Pernet, 392",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR",
+      "addressNeighborhood": "Tatuapé"
+    },
+    "areaServed": [
+      "Tatuapé",
+      "Carrão",
+      "Belém",
+      "Vila Carrão",
+      "Jardim Anália Franco",
+      "Zona Leste"
+    ],
+    "openingHours": "Mo-Sa 09:00-18:00",
+    "sameAs": [
+      "https://hair-by-monica.vercel.app/"
+    ]
+  }
+  </script>
 
-    <link rel="canonical" href="https://hair-by-monica.vercel.app/" />
-
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Monica Hair salão de beleza no Tatuapé | Corte Feminino, Escova e Hidratação" />
-
-    <meta property="og:description"
-      content="Atendimento personalizado de segunda a sábado, das 09h às 18h, na Rua Padre Estêvão Penet, 392 — Tatuapé. Agende pelo WhatsApp." />
-
-    <meta property="og:type" content="website" />
-
-    <meta property="og:image" content="https://hair-by-monica.vercel.app/images/capa-social.jpg" />
-
-    <meta property="og:url" content="https://hair-by-monica.vercel.app/" />
-
-    <meta property="og:site_name" content="Monica Hair" />
-
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-
-  </head>
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- FAVICON -->
   <link rel="icon" href="favicon.ico" />
-
 </head>
 
 <body>
 
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/5511989687923" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-    aria-label="Agendar atendimento pelo WhatsApp">
+  <a
+    href="https://wa.me/5511989687923?text=Olá,%20Monica!%20Gostaria%20de%20agendar%20um%20horário%20na%20Monica%20Hair."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Agendar atendimento pelo WhatsApp"
+  >
     WhatsApp
   </a>
 
   <!-- HERO -->
   <header class="hero">
-
     <div class="overlay"></div>
 
     <div class="hero-content">
-
       <span class="tag">
-        Atendimento Premium Personalizado
+        Cabeleireira no Tatuapé • Atendimento Personalizado
       </span>
 
       <h1>
-        Monica Hair salão de beleza no Tatuapé — Corte Feminino, Escova e Hidratação
+        Monica Hair — salão de beleza no Tatuapé
       </h1>
 
       <p class="hero-description">
-        Salão de beleza no Tatuapé com atendimento personalizado em corte feminino,
-        escova, hidratação, colorimetria, penteados, maquiagem profissional e
-        escova progressiva sem formol. Atendimento de segunda a sábado, das 09h às 18h,
-        na Rua Padre Estêvão Penet, 392 — Tatuapé.
+        Atendimento personalizado em corte feminino, escova, hidratação,
+        colorimetria, penteados, maquiagem profissional e escova progressiva
+        sem formol. Atendimento de segunda a sábado, das 09h às 18h,
+        na Rua Padre Estêvão Pernet, 392 — Tatuapé.
       </p>
 
       <div class="hero-infos">
-
-        <span>
-          ✨ +300 clientes atendidas ao longo da carreira
-        </span>
-
-        <span>
-          ⭐ +20 anos de experiência
-        </span>
-
-        <span>
-          📍 Tatuapé • Zona Leste
-        </span>
-
+        <span>✨ +300 clientes atendidas ao longo da carreira</span>
+        <span>⭐ +20 anos de experiência</span>
+        <span>📍 Tatuapé • Zona Leste</span>
       </div>
 
       <div class="hero-buttons">
-
-        <a class="btn-whatsapp"
+        <a
+          class="btn-whatsapp"
           href="https://wa.me/5511989687923?text=Olá,%20Monica!%20Gostaria%20de%20agendar%20um%20horário%20na%20Monica%20Hair.%20Meu%20nome%20é%20____%20e%20tenho%20interesse%20em%20____."
-          target="_blank" rel="noopener noreferrer">
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Agendar pelo WhatsApp
         </a>
-
       </div>
-
     </div>
-
-    </div>
-
   </header>
 
   <main>
 
     <!-- DIFERENCIAIS -->
     <section class="diferenciais">
-
       <div class="container">
-
         <div class="section-header">
+          <span class="section-tag">Diferenciais</span>
 
-          <span class="section-tag">
-            Diferenciais
-          </span>
-
-          <h2>
-            Por que escolher a Monica Hair?
-          </h2>
+          <h2>Por que escolher a Monica Hair?</h2>
 
           <p>
-            Atendimento humanizado, técnicas modernas
-            e foco total na saúde e beleza dos fios.
+            Atendimento humanizado, técnicas modernas e foco total
+            na saúde, beleza e autoestima de cada cliente.
           </p>
-
         </div>
 
         <div class="diferenciais-grid">
-
           <article class="diferencial-card">
-
-            <h3>
-              Atendimento Exclusivo
-            </h3>
-
+            <h3>Atendimento Exclusivo</h3>
             <p>
-              Experiência personalizada para valorizar
-              sua identidade e autoestima.
+              Experiência personalizada para valorizar sua identidade,
+              seu estilo e sua autoestima.
             </p>
-
           </article>
 
           <article class="diferencial-card">
-
-            <h3>
-              Produtos Premium
-            </h3>
-
+            <h3>Produtos Premium</h3>
             <p>
-              Produtos profissionais de alta performance
-              para brilho, recuperação e proteção.
+              Produtos profissionais de alta performance para brilho,
+              recuperação, proteção e acabamento sofisticado.
             </p>
-
           </article>
 
           <article class="diferencial-card">
-
-            <h3>
-              Técnicas Modernas
-            </h3>
-
+            <h3>Técnicas Modernas</h3>
             <p>
-              Procedimentos atualizados com foco em
-              acabamento sofisticado e natural.
+              Procedimentos atualizados com foco em resultado natural,
+              segurança, elegância e saúde dos fios.
             </p>
-
           </article>
-
         </div>
-
       </div>
-
     </section>
 
     <!-- SERVIÇOS -->
     <section class="servicos">
-
       <div class="container">
-
         <div class="section-header">
+          <span class="section-tag">Serviços Premium</span>
 
-          <span class="section-tag">
-            Serviços Premium
-          </span>
-
-          <h2>
-            Serviços Especializados
-          </h2>
+          <h2>Serviços de salão de beleza no Tatuapé</h2>
 
           <p>
-            Técnicas modernas e atendimento personalizado
-            para realçar sua beleza com elegância.
+            Corte feminino, escova, hidratação capilar, colorimetria,
+            penteados, maquiagem profissional e escova progressiva sem formol
+            com atendimento personalizado no Tatuapé.
           </p>
-
         </div>
 
         <div class="services-grid">
-
           <!-- CORTE -->
           <article class="service-card">
-
-            <img src="images/corte-feminino.jpg" alt="Corte feminino sofisticado" loading="lazy" />
+            <img
+              src="images/corte-feminino.jpg"
+              alt="Corte feminino no salão de beleza Monica Hair no Tatuapé"
+              loading="lazy"
+            />
 
             <div class="card-content">
-
-              <h3>
-                Corte Feminino
-              </h3>
-
+              <h3>Corte Feminino</h3>
               <p>
-                Cortes personalizados alinhados ao seu estilo
-                e formato do rosto.
+                Cortes personalizados alinhados ao seu estilo,
+                formato do rosto e rotina.
               </p>
-
             </div>
-
           </article>
 
           <!-- ESCOVA -->
           <article class="service-card">
-
-            <img src="images/escova-premium.jpg" alt="Escova premium profissional" loading="lazy" />
+            <img
+              src="images/escova-premium.jpg"
+              alt="Escova profissional no Tatuapé na Monica Hair"
+              loading="lazy"
+            />
 
             <div class="card-content">
-
-              <h3>
-                Escova Premium
-              </h3>
-
+              <h3>Escova Premium</h3>
               <p>
-                Movimento natural, brilho intenso
-                e acabamento sofisticado.
+                Movimento natural, brilho intenso e acabamento
+                sofisticado para o dia a dia ou ocasiões especiais.
               </p>
-
             </div>
-
           </article>
 
           <!-- HIDRATAÇÃO -->
           <article class="service-card">
-
-            <img src="images/hidratacao-premium.jpg" alt="Hidratação capilar premium" loading="lazy" />
+            <img
+              src="images/hidratacao-premium.jpg"
+              alt="Hidratação capilar no Tatuapé na Monica Hair"
+              loading="lazy"
+            />
 
             <div class="card-content">
-
-              <h3>
-                Hidratação Capilar
-              </h3>
-
+              <h3>Hidratação Capilar</h3>
               <p>
-                Recuperação profunda com foco
-                em brilho, maciez e alinhamento.
+                Tratamento para recuperação dos fios, com foco em brilho,
+                maciez, alinhamento e cuidado capilar.
               </p>
-
             </div>
-
           </article>
 
-          <!-- ALISAMENTO -->
+          <!-- PROGRESSIVA -->
           <article class="service-card">
-
-            <img src="images/alisamento-perfeito.jpg" alt="Escova Progressiva sem Formol" loading="lazy" />
+            <img
+              src="images/alisamento-perfeito.jpg"
+              alt="Escova progressiva sem formol no Tatuapé na Monica Hair"
+              loading="lazy"
+            />
 
             <div class="card-content">
-
-              <h3>
-                Escova Progressiva sem Formol
-              </h3>
-
+              <h3>Escova Progressiva sem Formol</h3>
               <p>
-                Redução de volume com acabamento
-                elegante e brilho duradouro.
+                Redução de volume com acabamento elegante, brilho duradouro
+                e atenção à saúde dos fios.
               </p>
-
             </div>
-
           </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- QUEM É A MONICA -->
+    <section class="sobre-monica">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Sobre a Profissional</span>
+
+          <h2>Quem é a Monica?</h2>
+
+          <p>
+            Profissional da beleza com mais de 20 anos de experiência,
+            atendimento personalizado e olhar técnico para valorizar cada cliente.
+          </p>
         </div>
 
-      </div>
+        <div class="sobre-monica-content">
+          <div class="sobre-monica-text">
+            <h3>Monica Hair — técnica, cuidado e beleza no Tatuapé</h3>
 
+            <p>
+              A Monica é profissional da beleza com mais de 20 anos de experiência,
+              formada pelo Instituto L'Oréal de Treinamento Profissional.
+              Sua trajetória é marcada por atendimento personalizado, escuta atenta
+              e cuidado com a autoestima de cada cliente.
+            </p>
+
+            <p>
+              Possui experiência em colorimetria, corte feminino, penteados,
+              escova profissional, escova progressiva sem formol, hidratação capilar
+              e maquiagem profissional.
+            </p>
+
+            <p>
+              Antes de cada procedimento, realiza uma análise cuidadosa dos cabelos
+              para indicar o serviço mais adequado ao estilo, rotina e necessidade
+              de cada cliente.
+            </p>
+
+            <div class="sobre-monica-highlights">
+              <span>+20 anos de experiência</span>
+              <span>Formação Instituto L'Oréal</span>
+              <span>Especialista em colorimetria</span>
+              <span>Corte feminino e penteados</span>
+              <span>Maquiagem profissional</span>
+              <span>Atendimento no Tatuapé</span>
+            </div>
+          </div>
+
+          <div class="sobre-monica-card">
+            <h3>Especialidades</h3>
+
+            <ul>
+              <li>Colorimetria</li>
+              <li>Corte feminino</li>
+              <li>Escova profissional</li>
+              <li>Escova progressiva sem formol</li>
+              <li>Penteados</li>
+              <li>Hidratação capilar</li>
+              <li>Maquiagem profissional</li>
+              <li>Análise dos cabelos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- RESULTADOS -->
     <section class="resultados">
-
       <div class="container">
-
         <div class="section-header">
+          <span class="section-tag">Resultados Reais</span>
 
-          <span class="section-tag">
-            Resultados Reais
-          </span>
-
-          <h2>
-            Transformações e Sofisticação
-          </h2>
+          <h2>Transformações e Sofisticação</h2>
 
           <p>
-            Cuidado, técnica e excelência em cada detalhe.
+            Cuidado, técnica e excelência em cada detalhe para realçar
+            sua beleza com naturalidade.
           </p>
-
         </div>
 
         <div class="resultados-grid">
-
           <article class="resultado-card">
-
-            <img src="images/alisamento-perfeito.jpg" alt="Resultado de Escova Progressiva sem Formol" loading="lazy" />
-
+            <img
+              src="images/alisamento-perfeito.jpg"
+              alt="Resultado de escova progressiva sem formol no Tatuapé"
+              loading="lazy"
+            />
           </article>
 
           <article class="resultado-card">
-
-            <img src="images/escova-premium.jpg" alt="Resultado de escova premium" loading="lazy" />
-
+            <img
+              src="images/escova-premium.jpg"
+              alt="Resultado de escova profissional no Tatuapé"
+              loading="lazy"
+            />
           </article>
-
         </div>
-
       </div>
-
     </section>
 
     <!-- DEPOIMENTOS -->
     <section class="depoimentos">
-
       <div class="container">
-
         <div class="section-header">
+          <span class="section-tag">Depoimentos</span>
 
-          <span class="section-tag">
-            Depoimentos
-          </span>
-
-          <h2>
-            O que as clientes dizem
-          </h2>
-
+          <h2>O que as clientes dizem</h2>
         </div>
 
         <div class="depoimentos-grid">
-
           <article class="depoimento-card">
-
             <p>
               “Atendimento impecável e resultado maravilhoso.
               Meu cabelo ficou incrível.”
             </p>
 
-            <strong>
-              Juliana S.
-            </strong>
-
+            <strong>Juliana S.</strong>
           </article>
 
           <article class="depoimento-card">
-
             <p>
               “Experiência sofisticada e atendimento extremamente cuidadoso.”
             </p>
 
-            <strong>
-              Camila R.
-            </strong>
-
+            <strong>Camila R.</strong>
           </article>
 
           <article class="depoimento-card">
-
             <p>
-              “Profissional excelente. Ambiente leve,
-              elegante e muito acolhedor.”
+              “Profissional excelente. Ambiente leve, elegante e muito acolhedor.”
             </p>
 
-            <strong>
-              Fernanda M.
-            </strong>
-
+            <strong>Fernanda M.</strong>
           </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- LOCALIZAÇÃO -->
+    <section class="localizacao" id="localizacao">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Localização</span>
+
+          <h2>Monica Hair — salão de beleza no Tatuapé</h2>
+
+          <p>
+            Atendimento na Rua Padre Estêvão Pernet, 392 — Tatuapé,
+            São Paulo — SP, com fácil acesso para clientes do Carrão,
+            Belém, Vila Carrão, Jardim Anália Franco e região da Zona Leste.
+          </p>
         </div>
 
-      </div>
+        <div class="localizacao-card">
+          <h3>Monica Hair — Tatuapé</h3>
 
+          <p>
+            <strong>Endereço:</strong><br />
+            Rua Padre Estêvão Pernet, 392 — Tatuapé<br />
+            São Paulo — SP
+          </p>
+
+          <p>
+            <strong>Horário de atendimento:</strong><br />
+            Segunda a sábado, das 09h às 18h
+          </p>
+
+          <p>
+            <strong>Região:</strong><br />
+            Tatuapé • Carrão • Belém • Vila Carrão • Jardim Anália Franco • Zona Leste
+          </p>
+
+          <a
+            class="cta"
+            href="https://www.google.com/maps/search/?api=1&query=Rua%20Padre%20Est%C3%AAv%C3%A3o%20Pernet%20392%20Tatuap%C3%A9%20S%C3%A3o%20Paulo%20SP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver localização no Google Maps
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- CTA FINAL -->
     <section class="cta-final">
-
       <div class="container">
-
-        <h2>
-          Reserve sua experiência Monica Hair
-        </h2>
+        <h2>Agende seu horário na Monica Hair no Tatuapé</h2>
 
         <p>
-          Horários limitados para atendimento premium personalizado.
+          Atendimento de segunda a sábado, das 09h às 18h,
+          na Rua Padre Estêvão Pernet, 392 — Tatuapé.
         </p>
 
-        <a href="https://wa.me/5511989687923" class="cta" target="_blank" rel="noopener noreferrer">
-          Agendar Atendimento Premium
+        <a
+          href="https://wa.me/5511989687923?text=Olá,%20Monica!%20Gostaria%20de%20agendar%20um%20horário%20na%20Monica%20Hair."
+          class="cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Agendar atendimento pelo WhatsApp
         </a>
-
       </div>
-
     </section>
 
     <!-- FAQ -->
     <section class="faq">
-
       <div class="container">
-
         <div class="section-header">
+          <span class="section-tag">FAQ</span>
 
-          <span class="section-tag">
-            FAQ
-          </span>
-
-          <h2>
-            Dúvidas Frequentes
-          </h2>
-
+          <h2>Dúvidas Frequentes</h2>
         </div>
 
         <details>
-
-          <summary>
-            Quanto tempo dura a escova?
-          </summary>
+          <summary>A Monica Hair é um salão de beleza no Tatuapé?</summary>
 
           <p>
-            Aproximadamente 1 hora, dependendo do comprimento e volume.
+            Sim. A Monica Hair oferece atendimento personalizado no Tatuapé,
+            com serviços de corte feminino, escova, hidratação capilar,
+            colorimetria, penteados, maquiagem profissional e escova progressiva sem formol.
           </p>
-
         </details>
 
         <details>
+          <summary>Onde fica a Monica Hair?</summary>
 
-          <summary>
-            Quais formas de pagamento são aceitas?
-          </summary>
+          <p>
+            A Monica Hair fica na Rua Padre Estêvão Pernet, 392 — Tatuapé,
+            São Paulo — SP, com fácil acesso para Carrão, Belém,
+            Vila Carrão e Jardim Anália Franco.
+          </p>
+        </details>
+
+        <details>
+          <summary>Qual é o horário de atendimento?</summary>
+
+          <p>
+            O atendimento é realizado de segunda a sábado, das 09h às 18h,
+            mediante agendamento pelo WhatsApp.
+          </p>
+        </details>
+
+        <details>
+          <summary>Quais serviços são oferecidos?</summary>
+
+          <p>
+            Corte feminino, escova, hidratação capilar, colorimetria,
+            penteados, maquiagem profissional e escova progressiva sem formol.
+          </p>
+        </details>
+
+        <details>
+          <summary>A Monica Hair atende clientes da Zona Leste?</summary>
+
+          <p>
+            Sim. A localização no Tatuapé facilita o acesso para clientes do Carrão,
+            Belém, Vila Carrão, Jardim Anália Franco e região da Zona Leste de São Paulo.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como faço para agendar um horário?</summary>
+
+          <p>
+            O agendamento pode ser feito diretamente pelo WhatsApp, clicando
+            nos botões de atendimento disponíveis na página.
+          </p>
+        </details>
+
+        <details>
+          <summary>Quais formas de pagamento são aceitas?</summary>
 
           <p>
             Pix, cartão de crédito, débito e dinheiro.
           </p>
-
         </details>
-
-        <details>
-
-          <summary>
-            Como reagendar meu horário?
-          </summary>
-
-          <p>
-            Basta entrar em contato pelo WhatsApp.
-          </p>
-
-        </details>
-
       </div>
-
     </section>
 
   </main>
 
   <!-- FOOTER -->
   <footer>
-
     <div class="container">
-
       <p>
-        © 2026 Monica Hair • Todos os direitos reservados
+        © 2026 Monica Hair • Tatuapé • São Paulo • Todos os direitos reservados
       </p>
-
     </div>
-
   </footer>
 
 </body>
 
 </html>
+```
