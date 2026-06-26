@@ -12,7 +12,7 @@ const form = document.getElementById("bookingForm");
 const messageEl = document.getElementById("bookingMessage");
 const submitButton = document.getElementById("bookingSubmit");
 
-const webhookUrl = window.MONICA_CONFIG?.N8N_WEBHOOK_URL || "";
+const webhookUrl = window.MONICA_CONFIG?.APPS_SCRIPT_URL || "";
 
 function showMessage(type, text) {
   messageEl.className = `booking-message ${type}`;

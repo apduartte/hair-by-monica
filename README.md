@@ -1,6 +1,6 @@
 # 💇‍♀️ Hair by Monica — Só de Segunda
 
-Hair by Monica — Só de Segunda: mini app de agendamento com experiência premium, onde a cliente escolhe o serviço, visualiza apenas horários disponíveis e finaliza pelo WhatsApp com mensagem automática. Backend em Google Apps Script (API REST) integrado ao Google Sheets como banco, com front-end para cliente e painel Admin para gestão da agenda.
+Hair by Monica — Atendimento de Segunda a sábado das 9h às 18h: mini app de agendamento com experiência premium, onde a cliente escolhe o serviço, visualiza apenas horários disponíveis e finaliza pelo WhatsApp com mensagem automática. Backend em Google Apps Script (API REST) integrado ao Google Sheets como banco, com front-end para cliente e painel Admin para gestão da agenda.
 
 Aplicativo web de **agendamento de serviços de cabeleireiro** com design sofisticado e fluxo simples: a cliente escolhe o serviço, vê **somente horários disponíveis**, seleciona um horário e finaliza pelo **WhatsApp** com mensagem pré-formatada.
 
