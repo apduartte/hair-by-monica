@@ -14,6 +14,22 @@ const submitButton = document.getElementById("bookingSubmit");
 
 const webhookUrl = window.MONICA_CONFIG?.APPS_SCRIPT_URL || "";
 
+// Impede a seleção de datas no passado
+const dataInput = document.getElementById("data");
+if (dataInput) {
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  // Garante que o mês e o dia tenham sempre 2 dígitos (ex: 09 em vez de 9)
+  const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+  const dia = String(hoje.getDate()).padStart(2, '0');
+
+  // Define o formato YYYY-MM-DD exigido pelo HTML5
+  const dataMinima = `${ano}-${mes}-${dia}`;
+  dataInput.min = dataMinima;
+}
+
+// ==========================================
+
 function showMessage(type, text) {
   messageEl.className = `booking-message ${type}`;
   messageEl.textContent = text;
@@ -35,47 +51,24 @@ function getDateAtNoon(dateValue) {
 function isAllowedWeekday(dateValue) {
   const date = getDateAtNoon(dateValue);
   const day = date.getDay();
-  return day >= 1 && day <= 6;
+  return day >= 1 && day <= 6; // Segunda a sábado
 }
 
 function isValidBusinessHour(hourValue) {
   if (!hourValue) return false;
-
   const [hour, minute] = hourValue.split(":").map(Number);
   const totalMinutes = hour * 60 + minute;
-
-  return totalMinutes >= 540 && totalMinutes < 1080;
+  return totalMinutes >= 540 && totalMinutes < 1080; // 09:00 às 18:00
 }
 
 function validateForm(payload) {
-  if (!payload.nome || !payload.telefone || !payload.data || !payload.hora || !payload.procedimento) {
-    return "Por favor, preencha todos os campos obrigatórios.";
-  }
-
-  if (payload.nome.trim().length < 3) {
-    return "Por favor, informe o nome completo.";
-  }
-
-  if (!isValidBrazilianMobile(payload.telefone)) {
-    return "Por favor, informe um celular brasileiro válido com DDD. Exemplo: 11999999999.";
-  }
-
-  if (!isAllowedWeekday(payload.data)) {
-    return "Não realizamos atendimentos aos domingos. Por favor, escolha uma data de segunda-feira a sábado.";
-  }
-
-  if (!isValidBusinessHour(payload.hora)) {
-    return "O atendimento está disponível de segunda-feira a sábado, das 09:00 às 18:00.";
-  }
-
-  if (!PROCEDIMENTOS[payload.procedimento]) {
-    return "Por favor, selecione um procedimento válido.";
-  }
-
-  if (!webhookUrl) {
-    return "Configuração do agendamento pendente. Informe a URL do Apps Script.";
-  }
-
+  if (!payload.nome) return "Por favor, informe seu nome completo.";
+  if (!isValidBrazilianMobile(payload.telefone)) return "Por favor, informe um número de celular válido com DDD (Ex: 11999999999).";
+  if (!payload.data) return "Por favor, selecione uma data para o agendamento.";
+  if (!isAllowedWeekday(payload.data)) return "Nosso salão atende de segunda-feira a sábado. Por favor, escolha outro dia.";
+  if (!payload.hora) return "Por favor, selecione um horário para o agendamento.";
+  if (!isValidBusinessHour(payload.hora)) return "Nosso horário de atendimento é das 09h às 18h. Por favor, escolha outro horário.";
+  if (!payload.procedimento) return "Por favor, selecione o procedimento desejado.";
   return null;
 }
 
@@ -108,16 +101,22 @@ if (form) {
     try {
       const response = await fetch(webhookUrl, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "text/plain;charset=utf-8"
         },
         body: JSON.stringify(payload)
       });
 
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Erro ao registrar agendamento.");
+      }
+
       showMessage(
         "success",
-        "Recebemos sua solicitação de agendamento com carinho. Em breve entraremos em contato para confirmar o melhor horário para você."
+        result.message ||
+          "Recebemos sua solicitação de agendamento com carinho. Em breve entraremos em contato para confirmar o melhor horário para você."
       );
 
       form.reset();
