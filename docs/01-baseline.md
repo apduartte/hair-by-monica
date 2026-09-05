@@ -199,3 +199,44 @@ Baseline criado.
 
 Próximo passo:
 instrumentação dos pontos de conversão antes do Experimento #001.
+
+---
+
+# 11. Evidência operacional complementar
+
+Em 05/09/2026 foi preservada uma evidência da estrutura operacional
+utilizada para controle da agenda.
+
+A evidência E-001 documenta a estrutura observada na planilha de
+agendamento, incluindo data, horário, disponibilidade, cliente,
+telefone e confirmação.
+
+A evidência operacional complementa este baseline sem alterar a
+análise originalmente registrada em 04/09/2026.
+
+## Evidência
+
+- E-001 — Baseline Operacional da Agenda
+- Data: 05/09/2026
+- Fonte: Google Sheets
+
+A evidência deve ser utilizada como referência para a próxima etapa
+de análise AS-IS.
+
+# 12. Status
+
+## Concluído
+
+- Baseline digital/CRO v1.0 registrado em 04/09/2026.
+- Baseline operacional da agenda preservado em 05/09/2026.
+- Evidência E-001 definida.
+- Estado atual preservado antes das alterações.
+
+## Próximo passo
+
+Documentar o processo AS-IS da agenda e identificar requisitos,
+regras de negócio, intervenções manuais, gaps e oportunidades
+de evolução.
+
+A instrumentação dos pontos de conversão será executada
+posteriormente, após a consolidação do AS-IS.
