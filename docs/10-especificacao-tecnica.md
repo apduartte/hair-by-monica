@@ -361,58 +361,6 @@ DISPONIBILIDADE_VERIFICADA
 REGISTRADO
 ```
 
-### Estados de rejeição
-
-Quando ocorrer uma inconsistência:
-
-```text
-RECEBIDO
-   ↓
-INVÁLIDO
-```
-
-Quando ocorrer conflito de horário:
-
-```text
-RECEBIDO
-   ↓
-VALIDADO
-   ↓
-CONFLITO
-```
-
-### Estado de confirmação
-
-A confirmação automática não faz parte do núcleo mínimo do MVP. Quando essa capacidade for implementada, o fluxo poderá evoluir para:
-
-```text
-REGISTRADO
-   ↓
-CONFIRMADO
-```
-
-Os estados devem representar o resultado efetivo do processamento.
-
-Não deve existir estado `CONFIRMADO` sem que as condições necessárias para confirmação tenham sido atendidas.
-
-Quando ocorrer uma inconsistência:
-
-RECEBIDO
-   ↓
-INVÁLIDO
-
-Quando ocorrer conflito de horário:
-
-RECEBIDO
-   ↓
-VALIDADO
-   ↓
-CONFLITO
-
-Os estados devem representar o resultado efetivo do processamento.
-
-Não deve existir estado CONFIRMADO sem que as condições necessárias para confirmação tenham sido atendidas.
-
 # 12. Fluxo de processamento
 
 O processamento deve seguir a sequência abaixo:
