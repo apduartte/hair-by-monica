@@ -1,5 +1,3 @@
-
-````markdown
 # Hair by Monica — Appointment Management System
 
 > Case de Engenharia de Software aplicado à transformação de um processo operacional de agendamento em um fluxo digital estruturado, mensurável e evolutivo.
