@@ -11,26 +11,17 @@ const ORIGEM_LEAD = "Landing Page Monica Hair";
 const form = document.getElementById("bookingForm");
 const messageEl = document.getElementById("bookingMessage");
 const submitButton = document.getElementById("bookingSubmit");
+const dataInput = document.getElementById("data");
 
 const webhookUrl = window.MONICA_CONFIG?.APPS_SCRIPT_URL || "";
 
-// Impede a seleção de datas no passado
-const dataInput = document.getElementById("data");
-if (dataInput) {
-  const hoje = new Date();
-  const ano = hoje.getFullYear();
-  // Garante que o mês e o dia tenham sempre 2 dígitos (ex: 09 em vez de 9)
-  const mes = String(hoje.getMonth() + 1).padStart(2, '0');
-  const dia = String(hoje.getDate()).padStart(2, '0');
-
-  // Define o formato YYYY-MM-DD exigido pelo HTML5
-  const dataMinima = `${ano}-${mes}-${dia}`;
-  dataInput.min = dataMinima;
-}
-
+// ==========================================
+// UTILITÁRIOS
 // ==========================================
 
 function showMessage(type, text) {
+  if (!messageEl) return;
+
   messageEl.className = `booking-message ${type}`;
   messageEl.textContent = text;
 }
@@ -41,6 +32,7 @@ function onlyDigits(value) {
 
 function isValidBrazilianMobile(phone) {
   const digits = onlyDigits(phone);
+
   return /^[1-9]{2}9\d{8}$/.test(digits);
 }
 
@@ -51,41 +43,116 @@ function getDateAtNoon(dateValue) {
 function isAllowedWeekday(dateValue) {
   const date = getDateAtNoon(dateValue);
   const day = date.getDay();
-  return day >= 1 && day <= 6; // Segunda a sábado
+
+  // Segunda-feira = 1
+  // Sábado = 6
+  return day >= 1 && day <= 6;
 }
 
 function isValidBusinessHour(hourValue) {
   if (!hourValue) return false;
+
   const [hour, minute] = hourValue.split(":").map(Number);
   const totalMinutes = hour * 60 + minute;
-  return totalMinutes >= 540 && totalMinutes < 1080; // 09:00 às 18:00
+
+  // Atendimento: 09:00 às 18:00
+  return totalMinutes >= 540 && totalMinutes < 1080;
 }
 
+// ==========================================
+// CONFIGURAÇÃO DA DATA MÍNIMA
+// ==========================================
+
+if (dataInput) {
+  const hoje = new Date();
+
+  const ano = hoje.getFullYear();
+  const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+  const dia = String(hoje.getDate()).padStart(2, "0");
+
+  dataInput.min = `${ano}-${mes}-${dia}`;
+}
+
+// ==========================================
+// VALIDAÇÃO DO FORMULÁRIO
+// ==========================================
+
 function validateForm(payload) {
-  if (!payload.nome) return "Por favor, informe seu nome completo.";
-  if (!isValidBrazilianMobile(payload.telefone)) return "Por favor, informe um número de celular válido com DDD (Ex: 11999999999).";
-  if (!payload.data) return "Por favor, selecione uma data para o agendamento.";
-  if (!isAllowedWeekday(payload.data)) return "Nosso salão atende de segunda-feira a sábado. Por favor, escolha outro dia.";
-  if (!payload.hora) return "Por favor, selecione um horário para o agendamento.";
-  if (!isValidBusinessHour(payload.hora)) return "Nosso horário de atendimento é das 09h às 18h. Por favor, escolha outro horário.";
-  if (!payload.procedimento) return "Por favor, selecione o procedimento desejado.";
+  if (!payload.nome) {
+    return "Por favor, informe seu nome completo.";
+  }
+
+  if (!isValidBrazilianMobile(payload.telefone)) {
+    return "Por favor, informe um número de celular válido com DDD (Ex: 11999999999).";
+  }
+
+  if (!payload.data) {
+    return "Por favor, selecione uma data para o agendamento.";
+  }
+
+  if (!isAllowedWeekday(payload.data)) {
+    return "Nosso salão atende de segunda-feira a sábado. Por favor, escolha outro dia.";
+  }
+
+  if (!payload.hora) {
+    return "Por favor, selecione um horário para o agendamento.";
+  }
+
+  if (!isValidBusinessHour(payload.hora)) {
+    return "Nosso horário de atendimento é das 09h às 18h. Por favor, escolha outro horário.";
+  }
+
+  if (!payload.procedimento) {
+    return "Por favor, selecione o procedimento desejado.";
+  }
+
   return null;
 }
+
+// ==========================================
+// ENVIO DO AGENDAMENTO
+// ==========================================
 
 if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    if (!webhookUrl) {
+      showMessage(
+        "error",
+        "O serviço de agendamento não está configurado no momento."
+      );
+
+      return;
+    }
+
     const formData = new FormData(form);
 
     const payload = {
       nome: String(formData.get("nome") || "").trim(),
-      telefone: onlyDigits(formData.get("telefone")),
-      data: String(formData.get("data") || ""),
-      hora: String(formData.get("hora") || ""),
-      procedimento: String(formData.get("procedimento") || ""),
+
+      telefone: onlyDigits(
+        formData.get("telefone")
+      ),
+
+      data: String(
+        formData.get("data") || ""
+      ),
+
+      hora: String(
+        formData.get("hora") || ""
+      ),
+
+      procedimento: String(
+        formData.get("procedimento") || ""
+      ).trim(),
+
       origem: ORIGEM_LEAD
     };
+
+    // --------------------------------------
+    // Validação local
+    // --------------------------------------
 
     const validationError = validateForm(payload);
 
@@ -94,37 +161,81 @@ if (form) {
       return;
     }
 
+    // --------------------------------------
+    // Estado de envio
+    // --------------------------------------
+
     submitButton.disabled = true;
     submitButton.textContent = "Enviando solicitação...";
+
     showMessage("", "");
 
     try {
       const response = await fetch(webhookUrl, {
         method: "POST",
+
+        // Mantemos text/plain para evitar
+        // preflight OPTIONS desnecessário.
         headers: {
           "Content-Type": "text/plain;charset=utf-8"
         },
+
         body: JSON.stringify(payload)
       });
 
+      if (!response.ok) {
+        throw new Error(
+          `Erro HTTP ${response.status}`
+        );
+      }
+
       const result = await response.json();
 
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || "Erro ao registrar agendamento.");
+      // --------------------------------------
+      // Contrato de resposta
+      // --------------------------------------
+
+      if (!result.success) {
+        throw new Error(
+          result.message ||
+          "Não foi possível registrar o agendamento."
+        );
       }
+
+      // --------------------------------------
+      // Sucesso
+      // --------------------------------------
 
       showMessage(
         "success",
         result.message ||
-          "Recebemos sua solicitação de agendamento com carinho. Em breve entraremos em contato para confirmar o melhor horário para você."
+        "Recebemos sua solicitação de agendamento. Em breve entraremos em contato para confirmar o melhor horário para você."
       );
 
       form.reset();
+
+      // Reaplica a data mínima após o reset.
+      if (dataInput) {
+        const hoje = new Date();
+
+        const ano = hoje.getFullYear();
+        const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+        const dia = String(hoje.getDate()).padStart(2, "0");
+
+        dataInput.min = `${ano}-${mes}-${dia}`;
+      }
+
     } catch (error) {
+      console.error(
+        "Erro ao enviar agendamento:",
+        error
+      );
+
       showMessage(
         "error",
-        "Não foi possível enviar sua solicitação no momento. Por favor, confira os dados informados ou tente novamente."
+        "Não foi possível enviar sua solicitação no momento. Por favor, tente novamente."
       );
+
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = "Solicitar agendamento";
